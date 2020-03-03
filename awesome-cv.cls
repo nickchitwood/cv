@@ -202,7 +202,7 @@
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{darktext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
@@ -599,12 +599,12 @@
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{3.0cm} L{\textwidth - 5.0cm} R{2.0cm}}
     \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+      {\entrydatestyle{#4} & \entrypositionstyle{#1} & {} \\}
+      {\entrydatestyle{#4} & \entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      {} & \entrypositionstyle{#1} & {} \\}
+    {} & \multicolumn{2}{L{\textwidth - 3.0cm}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
 
@@ -619,7 +619,7 @@
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 7.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
       {\subentrydatestyle{#3}}{}
@@ -628,9 +628,11 @@
       {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
     \ifthenelse{\equal{#4}{}}
       {}
-      {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
+      {\multicolumn{2}{L{14.0cm}}{\subdescriptionstyle{#4}} \\}
   \end{tabular*}
 }
+
+
 
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
@@ -639,7 +641,7 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{3.0cm} L{\textwidth - 5.5cm} R{2.5cm}}
 }{%
     \end{tabular*}
   \end{center}
@@ -682,14 +684,12 @@
 }
 
 % Non-justified CV items
-\newenvironment{cvitems-apa}{%
-  \vspace{-4.0mm}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0pt}
-    \renewcommand{\labelitemi}{\bullet}
+\newenvironment{pubitems}{%
+  \begin{itemize}[leftmargin=2em, nosep, noitemsep, itemindent=-20pt, before=\descriptionstyle]
+    \setlength{\parskip}{1pt}
+    \renewcommand{\labelitemi}{}
   }{%
   \end{itemize}
-  \vspace{-4.0mm}
 }
 
 %-------------------------------------------------------------------------------

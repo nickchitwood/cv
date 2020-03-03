@@ -6,7 +6,8 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "xelatex cv.tex"
+      "command": "xelatex cv.tex",
+      "problemMatcher": []
     }
   ]
 }
