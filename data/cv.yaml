@@ -16,7 +16,7 @@ document:
 profile:
   name_left: 'Nicholas R. Chitwood,'
   name_right: 'Ed.D.'
-  position: 'Administrator{\enskip\cdotp\enskip}Riverside County Office of Education'
+  position: 'Administrator, Assessment, Accountability, and Continuous Improvement{\enskip\cdotp\enskip}Riverside County Office of Education'
   address: '8348 Carriage Ct. Riverside, CA 92508'
   mobile: '559-303-7730'
   email: 'nicholaschitwood@gmail.com'
@@ -56,7 +56,7 @@ sections:
       items: []
 
   professional_experience:
-    - title: 'Administrator'
+    - title: 'Administrator, Assessment, Accountability, and Continuous Improvement'
       organization: 'Riverside County Office of Education'
       location: 'Riverside, CA'
       dates: 'July 2022 - Present'
@@ -173,7 +173,7 @@ sections:
       location: 'Riverside, CA'
       dates: 'September 20, 2024'
       items:
-        - 'Scholastic Esports: Evidence of Equitable Engagement'
+        - 'Co-presented data analysis of scholastic esports participation demographics, demonstrating equitable engagement patterns across student groups and school sites in Riverside County.'
     - role: 'Lightning Talk Presenter'
       event: 'PyCon 2024 Education Summit -- "LocalGPT for Student Voice while Respecting Student Privacy"'
       location: 'Pittsburgh, PA'
@@ -216,7 +216,7 @@ sections:
       dates: 'Aug. 2019'
       items:
         - 'Presented a full day workshop on the California Longitudinal Pupil Achievement and Data System (CALPADS) for non-technical stakeholders within the education system, focused on developing an understanding of the accountability, assessment, and individual student context for data entry and management by site and district staff.'
-    - role: 'Presenter for Dashboard 101 Webinar with the California Collaborative for Educational Excellence'
+    - role: 'Co-Presenter (with CCEE, CDE, and Public Advocates)'
       event: 'Dashboard 101 Webinar for the Statewide System of Support'
       location: 'Sacramento, CA'
       dates: 'Jan. 2019'
@@ -265,13 +265,13 @@ sections:
     - title: 'Interactive Visualizations and Dashboards'
       scope_note: 'Public-facing dashboards serving district and county office stakeholders. Tableau Public dashboards are open-access; Shiny applications are hosted at riverside.shinyapps.io.'
       items:
-        - 'Chitwood, N.R. (2024--present). \textit{CAASPP/ELPAC Participation Rate Risk Report} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/ParticipationRate_17127781575170/ParticipationRate2025byStudentGroup}{Tableau Public link}.'
-        - 'Chitwood, N.R. (2025--present). \textit{LREBG Needs Assessment Dashboard} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/LREBG/LREBG-ELA}{Tableau Public link}.'
-        - 'Chitwood, N.R. (2024--present). \textit{CalKIDS Results by District} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/CalkidsDashboard/CalKIDSResultsbyDistrict-Table}{Tableau Public link}.'
-        - 'Chitwood, N.R. (2024--present). \textit{CCI Data: District CCI by Year by Student Group} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/CCIData/DistrictCCIbyYearbyStudentGroup}{Tableau Public link}.'
-        - 'Chitwood, N.R. (2018--present). \textit{CSI-ATSI School Identification Report} [Shiny Dashboard, annually updated]. Riverside County Office of Education. \href{https://riverside.shinyapps.io/CSI-ATSI-2025/}{Shiny app link}.'
-        - 'Chitwood, N.R. (2018--2020). \textit{Schools/Districts Beating the Odds: Positive Outlier Model} [Shiny Dashboard]. Riverside County Office of Education. \href{https://riverside.shinyapps.io/SchoolModel2019/}{Shiny app link}.'
-        - 'Chitwood, N.R. (2019). \textit{CA School Dashboard Multiyear Report} [Shiny Dashboard]. Riverside County Office of Education. \href{https://riverside.shinyapps.io/Dashboard_MultiYear/}{Shiny app link}.'
+        - 'Chitwood, N.R. (2024--present). \textit{CAASPP/ELPAC Participation Rate Risk Report} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/ParticipationRate_17127781575170/ParticipationRate2025byStudentGroup}{[Link]}'
+        - 'Chitwood, N.R. (2025--present). \textit{LREBG Needs Assessment Dashboard} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/LREBG/LREBG-ELA}{[Link]}'
+        - 'Chitwood, N.R. (2024--present). \textit{CalKIDS Results by District} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/CalkidsDashboard/CalKIDSResultsbyDistrict-Table}{[Link]}'
+        - 'Chitwood, N.R. (2024--present). \textit{CCI Data: District CCI by Year by Student Group} [Tableau Public, annually updated]. Riverside County Office of Education. \href{https://public.tableau.com/app/profile/rcoe/viz/CCIData/DistrictCCIbyYearbyStudentGroup}{[Link]}'
+        - 'Chitwood, N.R. (2018--present). \textit{CSI-ATSI School Identification Report} [Shiny Dashboard, annually updated]. Riverside County Office of Education. \href{https://riverside.shinyapps.io/CSI-ATSI-2025/}{[Link]}'
+        - 'Chitwood, N.R. (2018--2020). \textit{Schools/Districts Beating the Odds: Positive Outlier Model} [Shiny Dashboard]. Riverside County Office of Education. \href{https://riverside.shinyapps.io/SchoolModel2019/}{[Link]}'
+        - 'Chitwood, N.R. (2019). \textit{CA School Dashboard Multiyear Report} [Shiny Dashboard]. Riverside County Office of Education. \href{https://riverside.shinyapps.io/Dashboard\_MultiYear/}{[Link]}'
 
   professional_service:
     - position: 'Treasurer'

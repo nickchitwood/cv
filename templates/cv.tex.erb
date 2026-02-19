@@ -13,6 +13,7 @@
 \colorlet{awesome}{<%= style.fetch('accent_color') %>}
 \setbool{acvSectionColorHighlight}{<%= tex_bool(style.fetch('section_color_highlight')) %>}
 \renewcommand{\acvHeaderSocialSep}{<%= style.fetch('social_separator') %>}
+\usepackage{needspace}
 
 \name{<%= profile.fetch('name_left') %>}{<%= profile.fetch('name_right') %>}
 \position{<%= profile.fetch('position') %>}
@@ -73,6 +74,25 @@
 <% end -%>
 \end{cventries}
 
+\Needspace{10\baselineskip}
+\cvsection{Selected Professional Work}
+<% sections.fetch('publications').each do |subsection| -%>
+\cvsubsection {<%= subsection.fetch('title') %>}
+<% if subsection.key?('scope_note') -%>
+
+\par\vspace{1mm}
+{\small\itshape <%= subsection.fetch('scope_note') %>}
+\par\vspace{2mm}
+<% end -%>
+\begin{pubitems}
+<% subsection.fetch('items').each do |item| -%>
+  \item {<%= item %>}
+<% end -%>
+\end{pubitems}
+
+<% end -%>
+
+\Needspace{12\baselineskip}
 \cvsection{Selected Presentations and Teaching Experience}
 \begin{cventries}
 <% sections.fetch('presentations').each do |entry| -%>
@@ -108,24 +128,6 @@
 
 <% end -%>
 \end{cvhonors}
-
-\cvsection{Selected Professional Work}
-<% sections.fetch('publications').each do |subsection| -%>
-\cvsubsection {<%= subsection.fetch('title') %>}
-<% if subsection.key?('scope_note') -%>
-\vspace{1mm}
-{\small\textit{<%= subsection.fetch('scope_note') %>}}
-\vspace{2mm}
-<% end -%>
-\begin{pubitems}
-<% subsection.fetch('items').each do |item| -%>
-  \item {<%= item %>}
-<% end -%>
-\end{pubitems}
-
-<% end -%>
-
-\pagebreak
 
 \cvsection{Professional/Civic Service}
 \begin{cvhonors}
