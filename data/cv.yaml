@@ -1,0 +1,318 @@
+document:
+  class_name: awesome-cv
+  class_options: '11pt, letterpaper'
+  fontdir: 'fonts/'
+  geometry:
+    left: 2cm
+    top: 2cm
+    right: 2cm
+    bottom: 1.5cm
+    footskip: .5cm
+  style:
+    accent_color: awesome-nephritis
+    section_color_highlight: true
+    social_separator: '\quad\textbar\quad'
+
+profile:
+  name_left: 'Nicholas R. Chitwood,'
+  name_right: 'Ed.D.'
+  position: 'Administrator{\enskip\cdotp\enskip}Riverside County Office of Education'
+  address: '8348 Carriage Ct. Riverside, CA 92508'
+  mobile: '559-303-7730'
+  email: 'nicholaschitwood@gmail.com'
+  homepage: 'www.nickchitwood.com'
+  github: 'nickchitwood'
+
+footer:
+  left: '\today'
+  center: 'Nicholas R. Chitwood, Ed.D.~~~\textperiodcentered~~~Curriculum Vitae'
+  right: '\thepage'
+
+sections:
+  education:
+    - degree: 'Ed.D., Education Leadership and Policy'
+      institution: 'University of California, Los Angeles'
+      location: 'Los Angeles, CA'
+      dates: 'March 2018'
+      items:
+        - 'Dissertation: The Effectiveness of Leadership Behaviors in Influencing Data-Driven Decision-Making by Teachers'
+        - 'Dissertation Co-Chairs: Mark Hansen, Ph.D. and Christina Christie, Ph.D.'
+    - degree: 'Doctoral Coursework, Education Leadership and Policy'
+      institution: 'University of California, Riverside'
+      location: 'Riverside, CA'
+      dates: 'Through Dec 2013'
+      items:
+        - 'Policy/Leadership Coursework: Politics of Education, State/Federal Policy in Education, Education Policy Analysis, School Finance, Organization and Administration of the School'
+        - 'Methodological Coursework: Qualitative Methods, Experimental Design, Statistical Inference and Hypothesis Testing, Advanced Statistics, Structural Equation Modeling, Problems in Evaluation'
+    - degree: 'M.Ed., Leadership'
+      institution: 'University of California, Riverside'
+      location: 'Riverside, CA'
+      dates: 'Aug 2009'
+      items: []
+    - degree: 'BA, Music Education'
+      institution: 'California State University, Fresno'
+      location: 'Fresno, CA'
+      dates: 'May 2006'
+      items: []
+
+  professional_experience:
+    - title: 'Administrator'
+      organization: 'Riverside County Office of Education'
+      location: 'Riverside, CA'
+      dates: 'July 2022 - Present'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Managed all data operations for the countywide CalKIDS initiative -- negotiating data sharing agreements with the State Treasurer's Office, designing the integration pipeline, and delivering Tableau dashboards monitoring individual and aggregate outcomes -- supporting 23 districts in registering over 32,000 students and facilitating access to \$16,000,000 in college savings funding.}
+          \item {Built and managed the data systems for the CSU College-Career Readiness Pilot, combining CCGI and CALPADS data via Python API integration with Google Sheets to deliver individualized on-track status reports to counselors at every high school in Riverside County, serving 19,000+ students with school-level permissioning. Negotiated the data sharing agreement to enable the partnership.}
+          \item {Provided direct data support for the SBHIP Needs Assessment and facilitated coordination between Managed Care Plans and school districts, contributing to a successful submission to DHCS that resulted in over \$7,000,000 in mental health grants awarded to participating districts.}
+          \item {Architected an on-premises countywide data system (RHEL 9, Kubernetes, Docker, Airflow, dbt, SQL Server, Minio, Tableau with row-level security), establishing RCOE's first integrated data warehouse supporting standardized reporting across the Educational Services Division.}
+          \item {Navigated data privacy and data sharing requirements across multiple initiatives, leading DSA negotiations with external partners (State Treasurer's Office, CSU system) and advising internal teams on FERPA compliance, statutory requirements, and cross-agency data governance.}
+          \item {Provided direct data and evaluation support across the Superintendent's Initiatives, including coordination between Managed Care Plans and districts (SBHIP), suicide prevention (SPARE), socioemotional learning (CalHOPE), and Whole Health Screening (MHSSA).}
+          \item {Co-led the Statewide Data Visualization COE Network with the San Diego County Office of Education, building data visualization capacity across county offices statewide.}
+          \item {Established a cross-divisional Student Data PLC at RCOE spanning Educational Services, Student Programs, Early Education, and Learning and Wellness Support, addressing technical and programmatic data system needs across the organization.}
+          \item {Provided technical leadership across the AACI data team (two administrators, a coordinator, temporary contractors, and interns), supporting a 48\% increase in data project volume (101 projects in 2025--26 vs. 68 prior year) while cross-training new staff in evaluation, survey design, and research request fulfillment.}
+          \item {Named 2024 Classified Administrator of the Year, Riverside County Office of Education.}
+        \end{cvitems}
+
+    - title: 'Data Coordinator'
+      organization: 'Riverside County Office of Education'
+      location: 'Riverside, CA'
+      dates: 'Apr 2018-June 2022'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Built a regression-based "Positive Outlier" model spanning all 23 Riverside County districts and 500+ schools, controlling for student demographics across ELA, Math, and NGSS to identify schools outperforming expectations -- used by the Instructional Services Unit to identify and share effective practices across similar-demographic schools.}
+          \item {Built a countywide linked analytic dataset integrating CALPADS, CAASPP, ELPAC, and College Board records for 430,000+ students in partnership with UC Riverside, enabling the Haynes Foundation research project "Examining Disparities in Mathematics Achievement to Promote Equity."}
+          \item {Developed a custom LCAP analysis web application (Vue.js/FastAPI) to categorize district LCAP actions and services, identifying thematic trends across 23 districts and enabling cross-district comparison of improvement strategies for unduplicated pupils.}
+          \item {Published annual Riverside County StudentTracker, PSAT/AP Potential, and Chronic Absenteeism reports, presenting longitudinal trend data to district superintendents, assistant superintendents, and directors across all 23 districts.}
+          \item {Contributed to annual LCAP review and approval for 23 districts, focusing on metric rigor and Increased/Improved Services compliance for unduplicated pupils, and delivered recurring training to district LCAP authors on outcome monitoring and accountability alignment.}
+          \item {Initiated RCOE's first formal data governance framework, producing a policies-and-procedures manual and data inventory that standardized privacy and quality practices and became part of Educational Services Division onboarding.}
+          \item {Facilitated cross-county data practice workgroups spanning five County Offices of Education (Imperial, Orange, Riverside, San Bernardino, San Diego), creating a regional venue for sharing data tools, iterating on shared resources, and building capacity in COVID-era data analysis and CSI/ATSI identification.}
+        \end{cvitems}
+
+    - title: 'Curriculum and Instruction Coordinator'
+      organization: 'Menifee Union School District'
+      location: 'Menifee, CA'
+      dates: 'Jun 2016-Apr 2018'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Built a real-time demographic dashboard in Tableau by querying the Illuminate SIS PostgreSQL backend, providing district leaders current enrollment and demographic visibility across 13 school sites without manual SIS reporting.}
+          \item {Automated assessment completion and scoring reports by building a Python/Selenium integration with the EADMS platform, replacing manual data pulls and accelerating reporting cycles for curriculum-linked assessments.}
+          \item {Validated district benchmark cut points against CAASPP outcomes using regression analysis, ensuring local assessment performance levels accurately predicted state results across 13 sites.}
+          \item {Authored the district LCAP and led implementation monitoring, aligning metrics and Increased/Improved Services requirements to measurable student outcomes across all district actions.}
+          \item {Managed the district's full assessment portfolio (ELPAC, CAASPP, GATE, NAEP, PSAT 8/9, PFT, and local benchmarks) across 10 elementary and 3 middle school sites.}
+        \end{cvitems}
+
+    - title: 'TOSA - Compliance Coordinator'
+      organization: 'Riverside Unified School District'
+      location: 'Riverside, CA'
+      dates: 'Aug 2013-Jun 2016'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Led the district's Federal Program Monitoring reviews across two cycles (online and in-person), mitigating over \$500,000 in potential compliance findings through corrective action and stakeholder engagement.}
+          \item {Advised leadership on allocation of \$10M+ in Title I funds, ensuring fiscal compliance while aligning spending to instructional priorities.}
+          \item {Designed an English learner data report distributed monthly to 2,000 teachers via SQL Server Reporting Services, linking student-level data to recommended instructional responses.}
+          \item {Identified and resolved a systemic course-placement error in AERIES SIS affecting 1,000+ Academic English Learners, then developed and delivered corrective professional development for administrators and counselors.}
+        \end{cvitems}
+
+    - title: 'Director of Bands, Ramona High School'
+      organization: 'Riverside Unified School District'
+      location: 'Riverside, CA'
+      dates: 'Aug 2009-Jun 2013'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Directed an instrumental music program serving 100+ students across marching, concert, and jazz ensembles, earning a bronze medal at the SCSBOA 2A Championships.}
+          \item {Recruited, supervised, and evaluated walk-on coaching staff while managing an annual program budget exceeding \$100,000.}
+          \item {Built community and booster partnerships to sustain program funding and student participation through enrollment fluctuations.}
+        \end{cvitems}
+
+    - title: 'Teacher'
+      organization: 'West Palms Conservatory, Victor Elementary School District'
+      location: 'Victorville, CA'
+      dates: 'Aug 2008-Jun 2009'
+      body_tex: ''
+
+    - title: 'Teacher'
+      organization: 'Los Banos High School, Los Banos Unified School District'
+      location: 'Los Banos, CA'
+      dates: 'Aug 2006-Jun 2008'
+      body_tex: ''
+
+  presentations:
+    - role: 'Presenter'
+      event: 'RCOE--Riverside Community College District Executive Team Meeting'
+      location: 'Riverside, CA'
+      dates: 'January 21, 2026'
+      items:
+        - 'Presented longitudinal National Student Clearinghouse and A-G completion data to joint RCOE and RCCD executive leadership, analyzing K-12 to community college enrollment and program completion outcomes across six graduating cohorts to inform K-16 partnership strategy.'
+    - role: 'Co-Presenter'
+      event: 'California Educational Research Association (CERA) Conference -- "Trust, Transfer, Transform: The Role of Data Agreements in Scaling Student Impact"'
+      location: 'Riverside, CA'
+      dates: 'November 4, 2025'
+      items:
+        - 'Co-presented with M. Bazanos and G. Compton (RCOE), A. Grommo (CSU Chancellor''s Office), and M. Hansen (CalKIDS Institute, UCLA) on building county-led data-sharing partnerships, featuring case studies on CalKIDS, CSU direct admissions, and local transcript analysis to improve postsecondary pathways across Riverside County.'
+    - role: 'Co-Presenter'
+      event: 'California Educational Research Association (CERA) Conference -- "From Shiny to Strategic: Choosing Data Tools That Empower Educators and Align with Real-World Practice"'
+      location: 'Riverside, CA'
+      dates: 'November 4, 2025'
+      items:
+        - 'Co-presented with S. Shin (CCEE), J. Watson (SDCOE), and J. Massie (SBCSS) on a collaborative framework for evaluating and selecting data platforms, introducing a multi-COE resource guide organized around six domains: integration, usability, professional learning, cost, technical capacity, and data security.'
+    - role: 'Content Co-Developer (with California School Information Services)'
+      event: 'CITE Conference -- "Hands-On Data: Building Efficient Pipelines for Effective Analysis"'
+      location: 'Sacramento, CA'
+      dates: 'November 2025'
+      items:
+        - 'Co-developed session content showcasing the technical architecture of RCOE''s custom data pipeline powering countywide BI and accountability dashboards, in collaboration with California School Information Services (CSIS). Session included hands-on SQL analysis and automated state-level data collection strategies.'
+    - role: 'Panelist'
+      event: 'CISC Symposium -- "Unlocking Student Data to Close Equity Gaps"'
+      location: 'Anaheim, CA'
+      dates: 'February 19, 2025'
+      items:
+        - 'Panelist on leveraging interoperable data standards and real-time APIs to accelerate equity-focused decision-making, alongside representatives from San Diego COE and the USC Rossier EdPolicy Hub, for the Curriculum and Instruction Steering Committee of the California County Superintendents.'
+    - role: 'Co-Presenter'
+      event: 'Excellence Through Equity Conference -- "Scholastic Esports: Evidence of Equitable Engagement"'
+      location: 'Riverside, CA'
+      dates: 'September 20, 2024'
+      items:
+        - 'Scholastic Esports: Evidence of Equitable Engagement'
+    - role: 'Lightning Talk Presenter'
+      event: 'PyCon 2024 Education Summit -- "LocalGPT for Student Voice while Respecting Student Privacy"'
+      location: 'Pittsburgh, PA'
+      dates: 'May 16, 2024'
+      items:
+        - 'Demonstrated the use of locally-hosted large language models (Meta-Llama 3) to analyze student focus group transcripts for equity initiatives while maintaining FERPA compliance by keeping student data off cloud services.'
+    - role: 'Co-Presenter'
+      event: 'Keys to Success: California College and Career Indicators (CCI) Convening'
+      location: 'Riverside, CA'
+      dates: 'April 12, 2024'
+      items:
+        - 'Co-presented with K. Bobbitt and Y. Nava (RCOE) and D. Mann (Val Verde USD) on California Dashboard CCI indicators, student placement, and data interpretation, incorporating RCOE-built Tableau visualizations for district leaders and counselors.'
+    - role: 'Co-Presenter'
+      event: 'CISC Symposium -- "Sharing is Caring: How Data-Sharing Supports Student Success"'
+      location: 'Monterey, CA'
+      dates: 'February 22, 2024'
+      items:
+        - 'Co-presented with M. Bazanos (RCOE) on how county offices leverage data-sharing to enhance technical assistance within California''s System of Support, providing tools, protocols, and presentation resources for attendees to apply in local continuous improvement contexts.'
+    - role: 'Co-Presenter'
+      event: 'California Educational Research Association (CERA) Conference -- "Diagnosing System Inequities Through Transcript Analysis and the Measuring Student Learning Project"'
+      location: 'Anaheim, CA'
+      dates: 'September 22, 2022'
+      items:
+        - 'Co-presented with M. Bazanos and G. Compton (RCOE) on leveraging transcript analysis and course grade distribution data to diagnose system-level inequities across middle, high, and alternative schools in Riverside County, with implications for continuous improvement and COE support services.'
+    - role: 'Presenter'
+      event: 'Chief Business Officers'' Network, Riverside County Office of Education -- "LCAP Analysis: Most Common Themes"'
+      location: 'Riverside, CA'
+      dates: 'September 16, 2022'
+      items:
+        - 'Presented cross-district LCAP thematic analysis to the Riverside County Chief Business Officers'' network, highlighting trends in district actions and services across 23 districts.'
+    - role: 'Presenter'
+      event: '2021 Education Data Science Summit -- "Which Tool When: A Comparison of RStudio, GitHub, Jupyter Notebooks, PowerBI, Tableau, Docker, and KNIME"'
+      location: 'Virtual'
+      dates: 'May 6, 2021'
+      items:
+        - 'Presented a comparative analysis of data science and visualization tools for education data practitioners, covering use cases and tradeoffs across statistical computing, version control, BI platforms, and containerized deployment.'
+    - role: 'Presenter'
+      event: 'CALPADS Workshop -- Improved Data Quality and Accuracy'
+      location: 'Bishop, CA'
+      dates: 'Aug. 2019'
+      items:
+        - 'Presented a full day workshop on the California Longitudinal Pupil Achievement and Data System (CALPADS) for non-technical stakeholders within the education system, focused on developing an understanding of the accountability, assessment, and individual student context for data entry and management by site and district staff.'
+    - role: 'Presenter for Dashboard 101 Webinar with the California Collaborative for Educational Excellence'
+      event: 'Dashboard 101 Webinar for the Statewide System of Support'
+      location: 'Sacramento, CA'
+      dates: 'Jan. 2019'
+      items:
+        - 'Served as member of content development and presentation team for Dashboard 101 statewide webinar, in collaboration with the California Collaborative for Educational Excellence (CCEE), California Department of Education (CDE), and Public Advocates. Developed and presented content specifically around understanding the Academic Indicator, as well as strategies for district and school leaders in presenting Dashboard outcomes to stakeholders and jointly implementing strategies to respond to those outcomes.'
+    - role: 'Presenter'
+      event: 'California All-State Music Education Conference (CASMEC) -- "A Changing Federal and State Landscape: What it Means for Music Educators"'
+      location: 'San Jose, CA'
+      dates: 'Feb. 2017'
+      items:
+        - 'Presented on the changing education landscape in regard to the Every Student Succeeds Act and the Local Control Funding Formula, and key leverage points in the education system that music educators could utilize in order to obtain more fiscal resources for their programs.'
+
+  honors:
+    - award: 'Classified Administrator of the Year'
+      event: 'Riverside County Office of Education'
+      location: 'Riverside, CA'
+      dates: '2024'
+    - award: 'Graduate Student Fellowship'
+      event: 'UC Riverside Graduate School of Education'
+      location: 'Riverside, CA'
+      dates: '2011-12'
+    - award: 'Ideal Active Achievement Award'
+      event: 'Kappa Kappa Psi Honorary Band Fraternity - Western District'
+      location: 'Las Vegas, NV'
+      dates: 'Mar. 2007'
+    - award: 'Ritchie Clendenin "Outstanding Bandsman"'
+      event: 'Fresno State Bulldog Marching Band'
+      location: 'Fresno, CA'
+      dates: 'Spr. 2006'
+    - award: 'Dean''s List (5 semesters)'
+      event: 'CSU-Fresno'
+      location: 'Fresno, CA'
+      dates: '2001-2006'
+
+  publications:
+    - title: 'Technical Reports and Other Manuscripts'
+      items:
+        - 'Chitwood, N.R. (2021). \textit{2020 Riverside County StudentTracker Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2020). \textit{2019 Riverside County StudentTracker Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2019). \textit{2019 GeoLead Differentiated Assistance Student Group Comparison Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2019). \textit{2019 GeoLead Differentiated Assistance Trend Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2019). \textit{2019 Riverside County PSAT/AP Potential report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2019). \textit{2018 Riverside County Chronic Absenteeism Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2019). \textit{2018 Riverside County StudentTracker Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2018). \textit{2018 Riverside County PSAT/AP Potential report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2018). \textit{2017 Riverside County Advanced Placement Report}. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2018). \textit{2017 Riverside County StudentTracker Report}. Riverside County Office of Education.'
+    - title: 'Dynamic Visualizations/Dashboards'
+      items:
+        - 'Chitwood, N.R. (2020, February 3). \textit{District Model 2019: Districts Beating the Odds} [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/DistrictsModel2019/}'
+        - 'Chitwood, N.R. (2019, November 22). \textit{Schools Model 2019: Schools Beating the Odds} [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/SchoolModel2019/}'
+        - 'Chitwood, N.R. (2019, November 19). \textit{CSI-ATSI School Report - 2019-2020 Identification Cycle}. [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/CSI-ATSI-2019/}'
+        - 'Chitwood, N.R. (2019, November 8). \textit{CA School Dashboard Multiyear Report}. [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/Dashboard\_MultiYear/}'
+        - 'Chitwood, N.R. (2019, August 28). \textit{CSI-ATSI School Report - 2018-2019 Identification Cycle} [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/CSI-ATSI/}'
+        - 'Chitwood, N.R. (2019, February 20) \textit{Riverside County Middle School Student Grade Report} [Internal PowerBI Report]. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2018, November 6) \textit{Riverside County Student Mobility Report} [Internal PowerBI Report]. Riverside County Office of Education.'
+        - 'Chitwood, N.R. (2018, October 4). \textit{Schools Model 2018} [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/SchoolModel2018/}'
+        - 'Chitwood, N.R. (2018, April 18). \textit{Great Schools Model} [Shiny Dashboard]. Riverside County Office of Education. \url{https://riverside.shinyapps.io/GreatSchools/}'
+
+  professional_service:
+    - position: 'Treasurer'
+      committee: 'Poly Band Boosters Corporation'
+      location: 'Riverside, CA'
+      dates: '2024-Present'
+    - position: 'RFP Review Panelist'
+      committee: 'Education Technology Joint Powers Authority - RFP 23/24-02: Assessment and Analytics Platforms'
+      location: 'California'
+      dates: '2023'
+    - position: 'Commissioner'
+      committee: 'Human Relations Commission - City of Riverside'
+      location: 'Riverside, CA'
+      dates: '2016-2019'
+    - position: 'Member'
+      committee: 'School Site Council - Washington Elementary'
+      location: 'Riverside, CA'
+      dates: '2018-2019'
+    - position: 'Vice-President'
+      committee: 'California Band Directors'' Association'
+      location: 'California'
+      dates: '2011-2015'
+    - position: 'Board Member'
+      committee: 'California Music Education Association - Southeastern Section'
+      location: 'California'
+      dates: '2013-2015'
+    - position: 'Member-at-Large'
+      committee: 'California Band Directors'' Association'
+      location: 'California'
+      dates: '2015-2017'
+
+  credentials:
+    - credential: 'Administrative Services Credential, Clear (2019)'
+      level: ''
+      dates: ''
+    - credential: 'Single Subject Teaching Credential, Foundational-Level Mathematics (2013)'
+      level: ''
+      dates: ''
+    - credential: 'Single Subject Teaching Credential, Music (2006)'
+      level: ''
+      dates: ''

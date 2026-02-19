@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Generated from YAML source
+cv.generated.tex
+cv.generated.pdf
+
+*.xdv
+
+# Local archive snapshots
+archive/*.pdf
+Chitwood-CV-????-??-??.pdf
+Chitwood-CV-????-??-??-??????.pdf

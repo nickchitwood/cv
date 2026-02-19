@@ -1,0 +1,149 @@
+<% document = data.fetch('document') -%>
+<% geometry = document.fetch('geometry') -%>
+<% style = document.fetch('style') -%>
+<% profile = data.fetch('profile') -%>
+<% footer = data.fetch('footer') -%>
+<% sections = data.fetch('sections') -%>
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[<%= document.fetch('class_options') %>]{<%= document.fetch('class_name') %>}
+\geometry{left=<%= geometry.fetch('left') %>, top=<%= geometry.fetch('top') %>, right=<%= geometry.fetch('right') %>, bottom=<%= geometry.fetch('bottom') %>, footskip=<%= geometry.fetch('footskip') %>}
+\fontdir[<%= document.fetch('fontdir') %>]
+\colorlet{awesome}{<%= style.fetch('accent_color') %>}
+\setbool{acvSectionColorHighlight}{<%= tex_bool(style.fetch('section_color_highlight')) %>}
+\renewcommand{\acvHeaderSocialSep}{<%= style.fetch('social_separator') %>}
+
+\name{<%= profile.fetch('name_left') %>}{<%= profile.fetch('name_right') %>}
+\position{<%= profile.fetch('position') %>}
+\address{<%= profile.fetch('address') %>}
+\mobile{<%= profile.fetch('mobile') %>}
+\email{<%= profile.fetch('email') %>}
+\homepage{<%= profile.fetch('homepage') %>}
+\github{<%= profile.fetch('github') %>}
+
+\begin{document}
+\makecvheader
+\makecvfooter
+  {<%= footer.fetch('left') %>}
+  {<%= footer.fetch('center') %>}
+  {<%= footer.fetch('right') %>}
+
+\urlstyle{same}
+
+\cvsection{Education}
+\begin{cventries}
+<% sections.fetch('education').each do |entry| -%>
+  \cventry
+    {<%= entry.fetch('degree') %>}
+    {<%= entry.fetch('institution') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+    {
+<% items = entry.fetch('items', []) -%>
+<% if items.any? -%>
+      \begin{cvitems}
+<% items.each do |item| -%>
+        \item {<%= item %>}
+<% end -%>
+      \end{cvitems}
+<% end -%>
+    }
+
+<% end -%>
+\end{cventries}
+
+\cvsection{Professional Experience in Education}
+\begin{cventries}
+<% sections.fetch('professional_experience').each do |entry| -%>
+  \cventry
+    {<%= entry.fetch('title') %>}
+    {<%= entry.fetch('organization') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+<% body = entry.fetch('body_tex', '').strip -%>
+<% if body.empty? -%>
+    {}
+<% else -%>
+    {
+<%= entry.fetch('body_tex') %>
+    }
+<% end -%>
+
+<% end -%>
+\end{cventries}
+
+\cvsection{Selected Presentations and Teaching Experience}
+\begin{cventries}
+<% sections.fetch('presentations').each do |entry| -%>
+  \cventry
+    {<%= entry.fetch('role') %>}
+    {<%= entry.fetch('event') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+    {
+<% items = entry.fetch('items', []) -%>
+<% if items.any? -%>
+      \begin{cvitems}
+<% items.each do |item| -%>
+        \item {<%= item %>}
+<% end -%>
+      \end{cvitems}
+<% end -%>
+    }
+
+<% end -%>
+\end{cventries}
+
+\pagebreak
+
+\cvsection{Honors \& Awards}
+\begin{cvhonors}
+<% sections.fetch('honors').each do |entry| -%>
+  \cvhonor
+    {<%= entry.fetch('award') %>}
+    {<%= entry.fetch('event') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+
+<% end -%>
+\end{cvhonors}
+
+\cvsection{Publications}
+<% sections.fetch('publications').each do |subsection| -%>
+\cvsubsection {<%= subsection.fetch('title') %>}
+\begin{pubitems}
+<% subsection.fetch('items').each do |item| -%>
+  \item {<%= item %>}
+<% end -%>
+\end{pubitems}
+
+<% end -%>
+
+\pagebreak
+
+\cvsection{Professional/Civic Service}
+\begin{cvhonors}
+<% sections.fetch('professional_service').each do |entry| -%>
+  \cvhonor
+    {<%= entry.fetch('position') %>}
+    {<%= entry.fetch('committee') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+
+<% end -%>
+\end{cvhonors}
+
+\cvsection{Credentials Held}
+\begin{cvhonors}
+<% sections.fetch('credentials').each do |entry| -%>
+  \cvhonor
+    {<%= entry.fetch('credential') %>}
+    {<%= entry.fetch('level') %>}
+    {} 
+    {<%= entry.fetch('dates') %>}
+
+<% end -%>
+\end{cvhonors}
+
+\end{document}
