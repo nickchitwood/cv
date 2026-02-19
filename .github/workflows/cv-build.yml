@@ -12,17 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-
       - name: Build generated CV PDF
         uses: xu-cheng/latex-action@v4
         with:
           root_file: cv.generated.tex
           latexmk_use_xelatex: true
-          pre_compile: make render
+          pre_compile: |
+            apk add --no-cache ruby
+            make render
 
       - name: Upload generated PDF
         uses: actions/upload-artifact@v4
