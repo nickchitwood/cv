@@ -109,9 +109,14 @@
 <% end -%>
 \end{cvhonors}
 
-\cvsection{Publications}
+\cvsection{Selected Professional Work}
 <% sections.fetch('publications').each do |subsection| -%>
 \cvsubsection {<%= subsection.fetch('title') %>}
+<% if subsection.key?('scope_note') -%>
+\vspace{1mm}
+{\small\textit{<%= subsection.fetch('scope_note') %>}}
+\vspace{2mm}
+<% end -%>
 \begin{pubitems}
 <% subsection.fetch('items').each do |item| -%>
   \item {<%= item %>}

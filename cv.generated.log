@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.5)  18 FEB 2026 16:59
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.5)  18 FEB 2026 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1252,21 +1252,46 @@ LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/m/n' will be
 (Font)              scaled to size 12.0pt on input line 375.
 LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 375.
+LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 377.
 LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 377.
- [5] [6] (./cv.generated.aux)
+(Font)              scaled to size 10.0pt on input line 377.
+LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/it' will be
+(Font)              scaled to size 10.95pt on input line 380.
+
+Overfull \hbox (2.32256pt too wide) in paragraph at lines 382--383
+[]\TU/SourceSansPro(0)/m/n/10.95 Chitwood, N.R. (2024–present). \TU/SourceSansP
+ro(0)/m/it/10.95 CA School Dashboard Estimates: Student Group Focus Report \TU/
+SourceSansPro(0)/m/n/10.95 [Automated RMark-
+ []
+
+
+Overfull \hbox (1.23242pt too wide) in paragraph at lines 396--397
+[]\TU/SourceSansPro(0)/m/n/10.95 Chitwood, N.R. (2024–present). \TU/SourceSansP
+ro(0)/m/it/10.95 CalKIDS Results by District \TU/SourceSansPro(0)/m/n/10.95 [Ta
+bleau Public, annually updated]. Riverside County
+ []
+
+
+Overfull \hbox (2.09457pt too wide) in paragraph at lines 399--400
+[]\TU/SourceSansPro(0)/m/n/10.95 Chitwood, N.R. (2018–2020). \TU/SourceSansPro(
+0)/m/it/10.95 Schools/Districts Beating the Odds: Positive Outlier Model \TU/So
+urceSansPro(0)/m/n/10.95 [Shiny Dashboard]. River-
+ []
+
+[5] [6] (./cv.generated.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33912 strings out of 468179
- 689998 string characters out of 5433207
+ 33914 strings out of 468179
+ 690110 string characters out of 5433207
  1281341 words of memory out of 5000000
- 62062 multiletter control sequences out of 15000+600000
- 630605 words of font info for 140 fonts, out of 8000000 for 9000
+ 62063 multiletter control sequences out of 15000+600000
+ 630613 words of font info for 141 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 131i,12n,135p,638b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,12n,135p,638b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on cv.generated.xdv (6 pages, 224044 bytes).
+Output written on cv.generated.xdv (6 pages, 221748 bytes).

@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1771462790.06352 "cv.generated.xdv" "cv.generated.pdf" "cv.generated" 1771462790.59828 0
-  "cv.generated.xdv" 1771462789.9716 224044 0cfbcfaf458b09b93d87ce46ab9dbce7 "xelatex"
+["xdvipdfmx"] 1771472697.13096 "cv.generated.xdv" "cv.generated.pdf" "cv.generated" 1771472697.72696 0
+  "cv.generated.xdv" 1771472697.03533 221748 6610a12f5b4e41f76f7defd3a7b717ec "xelatex"
   (generated)
   "cv.generated.pdf"
   (rewritten before read)
-["xelatex"] 1771462788.35971 "cv.generated.tex" "cv.generated.xdv" "cv.generated" 1771462790.59677 0
+["xelatex"] 1771472695.31469 "cv.generated.tex" "cv.generated.xdv" "cv.generated" 1771472697.72546 0
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -167,8 +167,8 @@
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1762378634 5947951 f3582f979b32c5bb7265e2c60033af3d ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "awesome-cv.cls" 1762378826.44358 30548 f87853d25d38ff7b5e59e6c6cfa6155f ""
-  "cv.generated.aux" 1771462789.97077 72 1b40c7cdddc6b210c1415c379bb0b201 "xelatex"
-  "cv.generated.tex" 1771462786.23178 23707 120dbd8c099d8fd3281da67342f3ea2d ""
+  "cv.generated.aux" 1771472697.03425 72 1b40c7cdddc6b210c1415c379bb0b201 "xelatex"
+  "cv.generated.tex" 1771472695.22503 24206 980876786cd82e3af22eaca6d78e47b0 ""
   (generated)
   "cv.generated.aux"
   "cv.generated.log"
