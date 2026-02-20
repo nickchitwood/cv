@@ -162,6 +162,12 @@ sections:
       dates: 'November 2025'
       items:
         - 'Co-developed session content showcasing the technical architecture of RCOE''s custom data pipeline powering countywide BI and accountability dashboards, in collaboration with California School Information Services (CSIS). Session included hands-on SQL analysis and automated state-level data collection strategies.'
+    - role: 'Featured Presenter (with RCOE AACI Team)'
+      event: 'CSIS Statewide Data Governance Academy -- Data Governance in Practice'
+      location: 'Virtual (Statewide)'
+      dates: 'Sep 2025'
+      items:
+        - 'One of five featured RCOE presenters in a statewide video series produced by California School Information Services (CSIS), sharing RCOE''s data governance journey and practical frameworks for county offices and LEAs building enterprise-level data practices. Series designed to support COEs and LEAs in Differentiated Assistance through the CALPADS pathway.'
     - role: 'Panelist'
       event: 'CISC Symposium -- "Unlocking Student Data to Close Equity Gaps"'
       location: 'Anaheim, CA'
