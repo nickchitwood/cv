@@ -138,6 +138,12 @@ sections:
       body_tex: ''
 
   presentations:
+    - role: 'Co-Presenter (with Kerry Bobbitt)'
+      event: 'CALPADS Workshop -- "Data Done Right: Leveraging CALPADS to Ensure College and Career Indicator Accuracy"'
+      location: 'Riverside, CA'
+      dates: 'March 5, 2026'
+      items:
+        - 'Co-presented a workshop on CALPADS 15.2 submission and its role in California School Dashboard reporting, covering the CDE''s new Course Code 9227 alignment and AP credit reporting based on final grades. Session addressed how miscoding affects College & Career Indicator data and provided strategies for building collaboration among registrars, counselors, CTE leaders, and site administrators to improve data accuracy and protect student outcomes.'
     - role: 'Presenter'
       event: 'RCOE--Riverside Community College District Executive Team Meeting'
       location: 'Riverside, CA'
