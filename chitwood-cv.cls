@@ -109,13 +109,16 @@
 %      left page edge and extends from below the masthead rule down to
 %      just above the footer rule. Paracol's native column background
 %      doesn't bleed past the column box, so eso-pic is the right tool.
-% Bottom edge of fill — fixed: 0.5in above page bottom, just above the
-% footer hairline rule. Width 3.9in: bleeds to left page edge, extends
-% ~0.2in past the sidebar text column for right-side padding.
+% Fill geometry. Width must END BEFORE the paracol main column's text
+% begins, otherwise the right side of the fill bleeds behind main col
+% text. With columnratio 0.42/0.58, columnsep 24pt, and 0.6in outer
+% margins, the main column text starts at ~3.86in from page left. So
+% 3.75in fill width sits cleanly in the gap (~0.22in padding past
+% sidebar text right edge, ~0.1in before main col text starts).
 \newlength{\atelierFillBottom}
 \setlength{\atelierFillBottom}{0.5in}
 \newlength{\atelierFillWidth}
-\setlength{\atelierFillWidth}{3.9in}
+\setlength{\atelierFillWidth}{3.75in}
 
 \AddToShipoutPictureBG{%
   \ifnum\value{page}=1\relax
@@ -332,9 +335,6 @@
 % Credentials / Professional service when rendered in the 5/12 column.
 \newenvironment{cvsidehonors}{%
   \par\vspace{0.5mm}%
-  % Right padding so sidebar text doesn't kiss the right edge of the
-  % sidebar fill rectangle. 0.5in of breathing room before the fill ends.
-  \rightskip=0.5in\relax
   \begin{list}{}{%
     \setlength{\leftmargin}{0pt}%
     \setlength{\labelwidth}{0pt}%
@@ -350,9 +350,9 @@
 % Usage: \cvsidehonor{title (e.g. Degree)}{org/event}{location}{dates}
 \newcommand*{\cvsidehonor}[4]{%
   \item\relax
-  % Right padding + hyphenation suppression set at the item level so both
-  % are active when the item's paragraph is line-broken.
-  \rightskip=0.5in
+  % Hyphenation suppression at the item level so it's active when the
+  % item's paragraph is line-broken. No \rightskip here — padding comes
+  % from the fill being narrower than the sidebar column.
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
   {\fontsize{9.5}{12}\InterTightSemiBold\color{atelierText}#1}\\[0.5mm]
   \ifempty{#2}{}{{\fontsize{8.5}{11}\InterTightRegular\color{muted}#2}\\}%
@@ -365,7 +365,6 @@
 % Sidebar credential variant — just a single styled line.
 \newcommand*{\cvsidecredential}[1]{%
   \item\relax
-  \rightskip=0.5in
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
   {\fontsize{10}{13}\InterTightRegular\color{atelierText}#1}%
 }
