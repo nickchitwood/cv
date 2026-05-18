@@ -86,7 +86,7 @@
   # bleeding across the paracol/single-col boundary at bottom of page 1.
   body_lines = first.fetch('body_tex').split("\n")
   item_lines = body_lines.select { |l| l.strip.start_with?('\item') }
-  hero_n = 5
+  hero_n = 6
   hero_items = item_lines.first(hero_n)
   rest_items = item_lines.drop(hero_n)
 -%>
