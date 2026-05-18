@@ -307,7 +307,8 @@
   \par\vspace{2mm}%
   \setlength\tabcolsep{0pt}%
   \setlength{\extrarowheight}{0pt}%
-  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} L{\linewidth - 3.0cm} R{3.0cm}}
+  % Date column 4cm — fits "Apr 2018 -- Jun 2022" on one line at 9.5pt.
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} L{\linewidth - 4cm} R{4cm}}
     \entrytitlestyle{#1} & \entrydatestyle{#4} \\
     \entrypositionstyle{#2\ \textperiodcentered\ #3} &
   \end{tabular*}%
@@ -377,6 +378,10 @@
 %-------------------------------------------------------------------------------
 \renewenvironment{cvitems}{%
   \vspace{-1mm}%
+  % Explicit font set on the env so bullets render at 10pt Inter Tight
+  % regardless of whether they're inside a cventry body or a bare
+  % cvitems block (e.g. the AACI Admin continuation after paracol ends).
+  \fontsize{10}{13.5}\selectfont\InterTightRegular\color{atelierText}%
   \begin{list}{%
     \tikz[baseline=-0.6ex]\fill[accent] (0,0) rectangle (4pt,4pt);%
   }{%
@@ -388,17 +393,15 @@
     \setlength{\parsep}{0pt}%
     \setlength{\topsep}{0.5mm}%
     \setlength{\rightmargin}{0pt}%
-    \linespread{1.18}\selectfont
   }%
 }{%
   \end{list}%
   \vspace{0.5mm}%
 }
 
-% Publication items — hanging indent, no bullet, slightly tighter.
-% Apply pubitemstyle directly (not via \descriptionstyle{...} which scopes the
-% font setting too narrowly) so Inter Tight reaches every item body.
-\newcommand*{\pubitemstyle}{\fontsize{10.5}{14}\InterTightRegular\color{atelierText}}
+% Publication items — hanging indent, no bullet. Same 10pt body size as
+% cvitems for font/size consistency across all body content.
+\newcommand*{\pubitemstyle}{\fontsize{10}{13.5}\InterTightRegular\color{atelierText}}
 \renewenvironment{pubitems}{%
   \vspace{0.5mm}%
   \pubitemstyle
