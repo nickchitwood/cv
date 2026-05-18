@@ -28,9 +28,17 @@
 
 \urlstyle{same}
 
+%%================================================================
+%% Page 1 — Atelier 5/7 hero. Sidebar carries identity (Contact,
+%% Education at a glance, Credentials). Main column opens with
+%% Professional Experience and the current-role header. After page
+%% 1, paracol ends and the rest of the doc runs full-width.
+%% Sidebar fill (eso-pic) is disabled on pages 2+ via the class.
+%%================================================================
+
 \begin{atelierbody}
 
-%%-------- Sidebar (5/12 column) --------
+%%-------- Sidebar (5/12 column, page 1 only) --------
 
 \cvsidesection{Contact}
 \begin{cvsidehonors}
@@ -51,32 +59,6 @@
     {<%= entry.fetch('institution') %>}
     {<%= entry.fetch('location') %>}
     {<%= entry.fetch('dates') %>}
-<% items = entry.fetch('items', []) || [] -%>
-<% items.each do |item| -%>
-  \item[]\relax {\fontsize{8.5}{12}\InterTightRegular\itshape\color{muted}<%= item %>}
-<% end -%>
-<% end -%>
-\end{cvsidehonors}
-
-\cvsidesection{Honors \& Awards}
-\begin{cvsidehonors}
-<% sections.fetch('honors').each do |entry| -%>
-  \cvsidehonor
-    {<%= entry.fetch('award') %>}
-    {<%= entry.fetch('event') %>}
-    {<%= entry.fetch('location') %>}
-    {<%= entry.fetch('dates') %>}
-<% end -%>
-\end{cvsidehonors}
-
-\cvsidesection{Professional \& Civic Service}
-\begin{cvsidehonors}
-<% sections.fetch('professional_service').each do |entry| -%>
-  \cvsidehonor
-    {<%= entry.fetch('position') %>}
-    {<%= entry.fetch('committee') %>}
-    {<%= entry.fetch('location') %>}
-    {<%= entry.fetch('dates') %>}
 <% end -%>
 \end{cvsidehonors}
 
@@ -89,11 +71,38 @@
 
 \tomain
 
-%%-------- Main (7/12 column) --------
+%%-------- Main (7/12 column, page 1 only) — Professional Experience opens --------
 
 \cvsection{Professional Experience}
 \begin{cventries}
-<% sections.fetch('professional_experience').each do |entry| -%>
+<% pro_exp = sections.fetch('professional_experience') -%>
+<% first = pro_exp.first -%>
+  \cventry
+    {<%= first.fetch('title') %>}
+    {<%= first.fetch('organization') %>}
+    {<%= first.fetch('location') %>}
+    {<%= first.fetch('dates') %>}
+    {}
+\end{cventries}
+
+\end{atelierbody}
+
+%% Force a clean break to page 2 so the AACI Admin body bullets don't
+%% flow under the page-1 sidebar fill. Page 1 stays a hero; full-width
+%% content owns page 2+.
+\newpage
+
+%%================================================================
+%% Pages 2+ — full-width single column. Same Atelier typography,
+%% color, marker squares, footer wordmark — no sidebar.
+%%================================================================
+
+%% Current-role bullets (body of the AACI Administrator cventry above)
+<%= first.fetch('body_tex') %>
+
+%% Remaining roles
+\begin{cventries}
+<% pro_exp.drop(1).each do |entry| -%>
   \cventry
     {<%= entry.fetch('title') %>}
     {<%= entry.fetch('organization') %>}
@@ -150,6 +159,26 @@
 <% end -%>
 \end{cventries}
 
-\end{atelierbody}
+\cvsection{Honors \& Awards}
+\begin{cvhonors}
+<% sections.fetch('honors').each do |entry| -%>
+  \cvhonor
+    {<%= entry.fetch('award') %>}
+    {<%= entry.fetch('event') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+<% end -%>
+\end{cvhonors}
+
+\cvsection{Professional \& Civic Service}
+\begin{cvhonors}
+<% sections.fetch('professional_service').each do |entry| -%>
+  \cvhonor
+    {<%= entry.fetch('position') %>}
+    {<%= entry.fetch('committee') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+<% end -%>
+\end{cvhonors}
 
 \end{document}

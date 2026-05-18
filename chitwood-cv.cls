@@ -111,12 +111,16 @@
 \newlength{\atelierSidebarFillWidth}
 \setlength{\atelierSidebarFillWidth}{0.42\paperwidth}
 
+% Sidebar fill only on page 1. Pages 2+ go full-width single-column, so the
+% fill would just be empty cream with no sidebar content above it.
 \AddToShipoutPictureBG{%
-  \AtPageUpperLeft{%
-    \put(0,-\paperheight){%
-      \color{sidebar}\rule{\atelierSidebarFillWidth}{\paperheight}%
+  \ifnum\value{page}=1\relax
+    \AtPageUpperLeft{%
+      \put(0,-\paperheight){%
+        \color{sidebar}\rule{\atelierSidebarFillWidth}{\paperheight}%
+      }%
     }%
-  }%
+  \fi
 }
 \AddToShipoutPictureFG{%
   \AtPageUpperLeft{%
