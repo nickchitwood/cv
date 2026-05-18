@@ -179,7 +179,7 @@
 \renewcommand*{\entrypositionstyle}[1]{{\fontsize{10}{13}\InterTightRegular\color{muted}#1}}
 \renewcommand*{\entrydatestyle}[1]{{\fontsize{9.5}{13}\InterTightRegular\color{muted}#1}}
 \renewcommand*{\entrylocationstyle}[1]{{\fontsize{9.5}{13}\InterTightRegular\itshape\color{muted}#1}}
-\renewcommand*{\descriptionstyle}[1]{{\fontsize{10.5}{15}\InterTightRegular\color{atelierText}#1}}
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{10}{13.5}\InterTightRegular\color{atelierText}#1}}
 
 \renewcommand*{\honortitlestyle}[1]{{\fontsize{9.5}{13}\InterTightRegular\color{muted}#1}}
 \renewcommand*{\honorpositionstyle}[1]{{\fontsize{9.5}{13}\InterTightSemiBold\color{atelierText}#1}}
@@ -333,8 +333,8 @@
 \newenvironment{cvsidehonors}{%
   \par\vspace{0.5mm}%
   % Right padding so sidebar text doesn't kiss the right edge of the
-  % sidebar fill rectangle. ~10pt of breathing room before the fill ends.
-  \rightskip=10pt\relax
+  % sidebar fill rectangle. 0.5in of breathing room before the fill ends.
+  \rightskip=0.5in\relax
   \begin{list}{}{%
     \setlength{\leftmargin}{0pt}%
     \setlength{\labelwidth}{0pt}%
@@ -350,9 +350,9 @@
 % Usage: \cvsidehonor{title (e.g. Degree)}{org/event}{location}{dates}
 \newcommand*{\cvsidehonor}[4]{%
   \item\relax
-  % Set hyphenation suppression at the item level (not inside a sub-group)
-  % so it's still active when the item's whole paragraph is line-broken.
-  % This is what stops "Policy" from breaking to "Pol-icy" in the sidebar.
+  % Right padding + hyphenation suppression set at the item level so both
+  % are active when the item's paragraph is line-broken.
+  \rightskip=0.5in
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
   {\fontsize{9.5}{12}\InterTightSemiBold\color{atelierText}#1}\\[0.5mm]
   \ifempty{#2}{}{{\fontsize{8.5}{11}\InterTightRegular\color{muted}#2}\\}%
@@ -365,6 +365,8 @@
 % Sidebar credential variant — just a single styled line.
 \newcommand*{\cvsidecredential}[1]{%
   \item\relax
+  \rightskip=0.5in
+  \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
   {\fontsize{10}{13}\InterTightRegular\color{atelierText}#1}%
 }
 
