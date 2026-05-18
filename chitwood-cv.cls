@@ -251,20 +251,20 @@
 %   \cvsidesection{name} — sidebar. ALL CAPS eyebrow in accent.
 %-------------------------------------------------------------------------------
 \renewcommand{\cvsection}[1]{%
-  \par\vspace{6mm}%
+  \par\vspace{3mm}%
   \noindent\atmarker[7pt]\hspace{6pt}\sectionstyle{#1}\par
-  \vspace{1mm}%
+  \vspace{0.5mm}%
   \noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
-  \vspace{1.5mm}%
+  \vspace{1mm}%
 }
 
 \newcommand{\cvsidesection}[1]{%
-  \par\vspace{5mm}%
+  \par\vspace{0.5mm}%
   \noindent{\fontsize{9}{12}\InterTightSemiBold\color{accent}%
     \addfontfeature{LetterSpace=10}\MakeUppercase{#1}}\par
-  \vspace{1mm}%
+  \vspace{0.2mm}%
   \noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
-  \vspace{1.5mm}%
+  \vspace{0.4mm}%
 }
 
 \renewcommand{\cvsubsection}[1]{%
@@ -335,13 +335,15 @@
 % Sidebar honor variant — stacked, no fixed columns. For Education / Honors /
 % Credentials / Professional service when rendered in the 5/12 column.
 \newenvironment{cvsidehonors}{%
-  \par\vspace{0.5mm}%
+  \par\vspace{0.3mm}%
   \begin{list}{}{%
     \setlength{\leftmargin}{0pt}%
     \setlength{\labelwidth}{0pt}%
     \setlength{\labelsep}{0pt}%
     \setlength{\itemindent}{0pt}%
-    \setlength{\itemsep}{2.5mm}%
+    % 1mm itemsep — minimal inter-entry padding so sidebar fits all
+    % content (Contact + Education with items + Credentials) on page 1.
+    \setlength{\itemsep}{1mm}%
     \setlength{\parsep}{0pt}%
     \setlength{\topsep}{0pt}%
   }%
@@ -356,7 +358,7 @@
   % Hyphenation suppression keeps "Policy" from breaking to "Pol-icy".
   \rightskip=0.25in
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
-  {\fontsize{9.5}{12}\InterTightSemiBold\color{atelierText}#1}\\[0.5mm]
+  {\fontsize{9.5}{12}\InterTightSemiBold\color{atelierText}#1}\\[0.2mm]
   \ifempty{#2}{}{{\fontsize{8.5}{11}\InterTightRegular\color{muted}#2}\\}%
   \ifempty{#3#4}{}{%
     {\fontsize{8.5}{11}\InterTightRegular\color{muted}%
@@ -364,12 +366,15 @@
   }%
 }
 
-% Sidebar credential variant — just a single styled line.
+% Sidebar credential variant — just a single styled line at 8.5pt to
+% match the muted subtext font in cvsidehonor entries, keeping the
+% sidebar visually consistent and saving vertical space so all three
+% credentials fit on page 1 instead of bleeding to page 2.
 \newcommand*{\cvsidecredential}[1]{%
   \item\relax
   \rightskip=0.25in
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
-  {\fontsize{10}{13}\InterTightRegular\color{atelierText}#1}%
+  {\fontsize{8.5}{11}\InterTightRegular\color{atelierText}#1}%
 }
 
 %-------------------------------------------------------------------------------

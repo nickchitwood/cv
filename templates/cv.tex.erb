@@ -59,6 +59,9 @@
     {<%= entry.fetch('institution') %>}
     {<%= entry.fetch('location') %>}
     {<%= entry.fetch('dates') %>}
+<% (entry.fetch('items', []) || []).each do |item| -%>
+  \par\vspace{0.1mm}\noindent{\fontsize{8.5}{11}\InterTightRegular\itshape\color{muted}<%= item %>}
+<% end -%>
 <% end -%>
 \end{cvsidehonors}
 
@@ -146,11 +149,13 @@
 \end{cventries}
 
 <% if sections.fetch('publications', []).any? -%>
-\newpage
 \cvsection{Selected Professional Work}
 <% sections.fetch('publications').each do |subsection| -%>
 <% items_in_sub = subsection.fetch('items', []) -%>
-\cvsubsection{<%= subsection.fetch('title') %>}
+<% sub_title = subsection.fetch('title', '').to_s.strip -%>
+<% if sub_title.length > 0 -%>
+\cvsubsection{<%= sub_title %>}
+<% end -%>
 <% if subsection.key?('scope_note') -%>
 
 \par\vspace{1mm}
@@ -169,8 +174,7 @@
 <% end -%>
 
 <% if sections.fetch('presentations', []).any? -%>
-\newpage
-\cvsection{Selected Presentations \& Teaching}
+\cvsection{Selected Presentations}
 \begin{cventries}
 <% sections.fetch('presentations').each do |entry| -%>
   \cventry
