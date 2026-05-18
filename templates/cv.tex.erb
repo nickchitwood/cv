@@ -77,11 +77,13 @@
 <% first = pro_exp.first -%>
 <%
   # Split the AACI Admin body into hero (page-1 paracol) and continuation
-  # (full-width on page 2+). First 4 bullets fit in the narrow paracol main
-  # column on page 1; rest flow at full width after paracol ends.
+  # (full-width on page 2+). First 5 bullets fit in the narrow paracol
+  # main column on page 1; an explicit \newpage after \end{atelierbody}
+  # ensures bullet 6 starts cleanly at full width on page 2 instead of
+  # bleeding across the paracol/single-col boundary at bottom of page 1.
   body_lines = first.fetch('body_tex').split("\n")
   item_lines = body_lines.select { |l| l.strip.start_with?('\item') }
-  hero_n = 4
+  hero_n = 5
   hero_items = item_lines.first(hero_n)
   rest_items = item_lines.drop(hero_n)
 -%>
@@ -104,9 +106,14 @@
 
 \end{atelierbody}
 
+%% Force a clean break so the remaining AACI Admin bullets start at the
+%% top of page 2 at full width — otherwise bullet 6 would bleed across
+%% the paracol/single-col boundary at the bottom of page 1.
+\newpage
+
 %%================================================================
-%% After paracol ends, the remaining AACI Admin bullets continue at
-%% full width on page 2+, then the rest of Professional Experience.
+%% After paracol ends + page break, remaining AACI bullets continue
+%% at full width on page 2, then the rest of Professional Experience.
 %% Sidebar eso-pic fill is gated on page 1 only.
 %%================================================================
 
