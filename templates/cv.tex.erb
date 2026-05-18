@@ -145,6 +145,7 @@
 <% end -%>
 \end{cventries}
 
+\newpage
 \cvsection{Selected Professional Work}
 <% sections.fetch('publications').each do |subsection| -%>
 \cvsubsection{<%= subsection.fetch('title') %>}
@@ -162,6 +163,7 @@
 
 <% end -%>
 
+\newpage
 \cvsection{Selected Presentations \& Teaching}
 \begin{cventries}
 <% sections.fetch('presentations').each do |entry| -%>
