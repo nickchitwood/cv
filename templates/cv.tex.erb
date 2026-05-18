@@ -86,7 +86,7 @@
   # bleeding across the paracol/single-col boundary at bottom of page 1.
   body_lines = first.fetch('body_tex').split("\n")
   item_lines = body_lines.select { |l| l.strip.start_with?('\item') }
-  hero_n = 6
+  hero_n = 7
   hero_items = item_lines.first(hero_n)
   rest_items = item_lines.drop(hero_n)
 -%>
@@ -109,10 +109,10 @@
 
 \end{atelierbody}
 
-%% Force a clean break so the remaining AACI Admin bullets start at the
-%% top of page 2 at full width — otherwise bullet 6 would bleed across
-%% the paracol/single-col boundary at the bottom of page 1.
-\newpage
+%% Only force a page break if we're still on page 1 (i.e., paracol
+%% didn't naturally overflow). Avoids the phantom-empty-page issue when
+%% the hero exactly fills page 1 and paracol has already advanced.
+\ifnum\value{page}=1 \newpage\fi
 
 %%================================================================
 %% After paracol ends + page break, remaining AACI bullets continue
