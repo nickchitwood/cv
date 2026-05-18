@@ -1,0 +1,119 @@
+document:
+  # Resume variant for the RCOE Executive Director, Assessment,
+  # Accountability, and Continuous Improvement posting. Trimmed and
+  # reordered from data/cv.yaml. Shares the chitwood-cv class + Atelier
+  # template; the YAML is the only thing that changes.
+  class_name: chitwood-cv
+  class_options: '11pt, letterpaper'
+
+profile:
+  name_left: 'Nicholas R. Chitwood,'
+  name_right: 'Ed.D'
+  position: 'Administrator, Assessment, Accountability, and Continuous Improvement\enskip\textperiodcentered\enskip Riverside County Office of Education'
+  address: 'Riverside, CA'
+  mobile: '559-303-7730'
+  email: 'nicholaschitwood@gmail.com'
+  homepage: 'www.nickchitwood.com'
+  github: 'nickchitwood'
+  version_stamp: 'Resume \textbullet\ May 2026'
+
+footer:
+  left: ''
+  center: ''
+  right: ''
+
+sections:
+  education:
+    - degree: 'Ed.D., Education Leadership and Policy'
+      institution: 'University of California, Los Angeles'
+      location: 'Los Angeles, CA'
+      dates: 'Mar 2018'
+      items: []
+    - degree: 'Doctoral Coursework, Education Leadership and Policy'
+      institution: 'University of California, Riverside'
+      location: 'Riverside, CA'
+      dates: 'Through Dec 2013'
+      items: []
+    - degree: 'M.Ed., Leadership'
+      institution: 'University of California, Riverside'
+      location: 'Riverside, CA'
+      dates: 'Aug 2009'
+      items: []
+    - degree: 'BA, Music Education'
+      institution: 'California State University, Fresno'
+      location: 'Fresno, CA'
+      dates: 'May 2006'
+      items: []
+
+  professional_experience:
+    # Current role — REORDERED for AACI ED positioning. Lead with
+    # accountability / Continuous Improvement / LCAP / statewide leadership,
+    # then technical scope, then major-program impact summarized into one
+    # bullet so the dollar figures are visible without the per-program detail.
+    - title: 'Administrator, Assessment, Accountability, and Continuous Improvement'
+      organization: 'Riverside County Office of Education'
+      location: 'Riverside, CA'
+      dates: 'Jul 2022 -- Present'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Member of the RCOE LCAP Fastpass team, contributing compliance review on annual district LCAP submissions to inform the Superintendent's plan approvals across Riverside County's 23 districts.}
+          \item {Facilitate the Data Subteam of the SoCal SOS Continuous Improvement: Data, Differentiated Assistance, and LCAP Workgroup, coordinating cross-COE data practice in support of data literacy across the California System of Support.}
+          \item {Co-led the Statewide Data Visualization COE Network with the San Diego County Office of Education, and co-facilitated the Riverside County Assessment Network (RCAN) through the transition following the prior assessment administrator's retirement.}
+          \item {Architected an on-premises countywide data system (RHEL 9, Kubernetes, Docker, Airflow, dbt, SQL Server, Minio, Tableau with row-level security) -- RCOE's first integrated data warehouse -- supporting the measurement of program impact on student achievement, district systems of support, and standardized reporting across the Educational Services Division.}
+          \item {Established a cross-divisional Student Data PLC at RCOE spanning Educational Services, Student Programs and Services, Early Education Services, Leadership, Wellness, and Student Services; supported program evaluations including the Bourns Science and Technology Education Partnership (STEP) conference and the Migrant Education program evaluation.}
+          \item {Built and managed countywide data systems for major partnership programs: CalKIDS (23 districts, 32,000+ students registered, access to \$16,000,000 in college savings); CSU Direct Admissions Pilot (every Riverside County high school, 19,000+ students, nearly \$3,000,000 in direct student financial impact); SBHIP Needs Assessment ($\$$7,000,000 in mental health grants awarded to participating districts). Led DSA negotiations with the State Treasurer's Office and CSU system.}
+          \item {Named 2024 Classified Administrator of the Year, Riverside County Office of Education.}
+        \end{cvitems}
+
+    - title: 'Data Coordinator'
+      organization: 'Riverside County Office of Education'
+      location: 'Riverside, CA'
+      dates: 'Apr 2018 -- Jun 2022'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Contributed to annual LCAP review and approval for 23 districts, focusing on metric rigor and Increased/Improved Services compliance for unduplicated pupils; delivered recurring training to district LCAP authors on outcome monitoring and accountability alignment.}
+          \item {Initiated RCOE's first formal data governance framework -- producing a policies-and-procedures manual and data inventory that standardized privacy and quality practices and became part of Educational Services Division onboarding.}
+          \item {Facilitated cross-county data practice workgroups spanning five County Offices of Education (Imperial, Orange, Riverside, San Bernardino, San Diego) for shared CSI/ATSI identification, COVID-era analysis, and regional data tooling.}
+        \end{cvitems}
+
+    - title: 'Curriculum and Instruction Coordinator'
+      organization: 'Menifee Union School District'
+      location: 'Menifee, CA'
+      dates: 'Jun 2016 -- Apr 2018'
+      body_tex: |-
+        \begin{cvitems}
+          \item {Authored the district LCAP and led implementation monitoring -- aligning metrics and Increased/Improved Services requirements to measurable student outcomes across all district actions.}
+          \item {Managed the district's full assessment portfolio (ELPAC, CAASPP, GATE, NAEP, PSAT 8/9, PFT, and local benchmarks) across 10 elementary and 3 middle school sites; validated district benchmark cut points against CAASPP outcomes via regression analysis.}
+        \end{cvitems}
+
+    - title: 'TOSA -- Compliance Coordinator'
+      organization: 'Riverside Unified School District'
+      location: 'Riverside, CA'
+      dates: 'Aug 2013 -- Jun 2016'
+      body_tex: ''
+
+    - title: 'Music Educator'
+      organization: 'Riverside USD (Ramona HS); Victor ESD; Los Banos USD'
+      location: 'CA'
+      dates: 'Aug 2006 -- Jun 2013'
+      body_tex: ''
+
+  # Resume scope: drop Selected Professional Work, Selected Presentations,
+  # Honors, and Professional/Civic Service. Resume is Experience + Education
+  # + Credentials only. Detail belongs in the CV; talking points belong in
+  # the cover letter.
+  presentations: []
+  honors: []
+  publications: []
+  professional_service: []
+
+  credentials:
+    - credential: 'Administrative Services Credential, Clear (2019)'
+      level: ''
+      dates: ''
+    - credential: 'Single Subject Teaching Credential, Foundational-Level Mathematics (2013)'
+      level: ''
+      dates: ''
+    - credential: 'Single Subject Teaching Credential, Music (2006)'
+      level: ''
+      dates: ''

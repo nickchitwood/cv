@@ -145,9 +145,11 @@
 <% end -%>
 \end{cventries}
 
+<% if sections.fetch('publications', []).any? -%>
 \newpage
 \cvsection{Selected Professional Work}
 <% sections.fetch('publications').each do |subsection| -%>
+<% items_in_sub = subsection.fetch('items', []) -%>
 \cvsubsection{<%= subsection.fetch('title') %>}
 <% if subsection.key?('scope_note') -%>
 
@@ -155,14 +157,18 @@
 {\fontsize{9}{12}\InterTightRegular\itshape\color{muted} <%= subsection.fetch('scope_note') %>}
 \par\vspace{2mm}
 <% end -%>
+<% if items_in_sub.any? -%>
 \begin{pubitems}
-<% subsection.fetch('items').each do |item| -%>
+<% items_in_sub.each do |item| -%>
   \item {<%= item %>}
 <% end -%>
 \end{pubitems}
-
 <% end -%>
 
+<% end -%>
+<% end -%>
+
+<% if sections.fetch('presentations', []).any? -%>
 \newpage
 \cvsection{Selected Presentations \& Teaching}
 \begin{cventries}
@@ -185,7 +191,9 @@
 
 <% end -%>
 \end{cventries}
+<% end -%>
 
+<% if sections.fetch('honors', []).any? -%>
 \cvsection{Honors \& Awards}
 \begin{cvhonors}
 <% sections.fetch('honors').each do |entry| -%>
@@ -196,7 +204,9 @@
     {<%= entry.fetch('dates') %>}
 <% end -%>
 \end{cvhonors}
+<% end -%>
 
+<% if sections.fetch('professional_service', []).any? -%>
 \cvsection{Professional \& Civic Service}
 \begin{cvhonors}
 <% sections.fetch('professional_service').each do |entry| -%>
@@ -207,5 +217,6 @@
     {<%= entry.fetch('dates') %>}
 <% end -%>
 \end{cvhonors}
+<% end -%>
 
 \end{document}
