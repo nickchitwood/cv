@@ -250,20 +250,28 @@
 %                          soft hairline.
 %   \cvsidesection{name} — sidebar. ALL CAPS eyebrow in accent.
 %-------------------------------------------------------------------------------
+% Section headers wrap their title + rule in a \parskip=0pt group so the
+% parskip package (loaded by awesome-cv) doesn't inject its default
+% ~7pt of gap after the \par that follows the title — that's what was
+% pushing the rule away from "EDUCATION" / "Contact" / etc.
 \renewcommand{\cvsection}[1]{%
   \par\vspace{3mm}%
+  \begingroup\parskip=0pt
   \noindent\atmarker[7pt]\hspace{6pt}\sectionstyle{#1}\par
   \vspace{0.5mm}%
   \noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
+  \endgroup
   \vspace{1mm}%
 }
 
 \newcommand{\cvsidesection}[1]{%
   \par\vspace{0.5mm}%
+  \begingroup\parskip=0pt
   \noindent{\fontsize{9}{12}\InterTightSemiBold\color{accent}%
     \addfontfeature{LetterSpace=10}\MakeUppercase{#1}}\par
   \vspace{0.2mm}%
   \noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
+  \endgroup
   \vspace{0.4mm}%
 }
 
