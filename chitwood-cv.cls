@@ -350,9 +350,10 @@
 % Usage: \cvsidehonor{title (e.g. Degree)}{org/event}{location}{dates}
 \newcommand*{\cvsidehonor}[4]{%
   \item\relax
-  % Hyphenation suppression at the item level so it's active when the
-  % item's paragraph is line-broken. No \rightskip here — padding comes
-  % from the fill being narrower than the sidebar column.
+  % \rightskip=0.25in shrinks the effective sidebar text width by 0.25in
+  % so long credential / degree titles wrap before reaching the fill edge.
+  % Hyphenation suppression keeps "Policy" from breaking to "Pol-icy".
+  \rightskip=0.25in
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
   {\fontsize{9.5}{12}\InterTightSemiBold\color{atelierText}#1}\\[0.5mm]
   \ifempty{#2}{}{{\fontsize{8.5}{11}\InterTightRegular\color{muted}#2}\\}%
@@ -365,6 +366,7 @@
 % Sidebar credential variant — just a single styled line.
 \newcommand*{\cvsidecredential}[1]{%
   \item\relax
+  \rightskip=0.25in
   \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
   {\fontsize{10}{13}\InterTightRegular\color{atelierText}#1}%
 }
