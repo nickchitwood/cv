@@ -265,7 +265,7 @@
 }
 
 \newcommand{\cvsidesection}[1]{%
-  \par\vspace{0.5mm}%
+  \par\vspace{3mm}%
   \begingroup\parskip=0pt
   \noindent{\fontsize{9}{12}\InterTightSemiBold\color{accent}%
     \addfontfeature{LetterSpace=10}\MakeUppercase{#1}}\par
