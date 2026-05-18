@@ -1,19 +1,12 @@
 <% document = data.fetch('document') -%>
-<% geometry = document.fetch('geometry') -%>
-<% style = document.fetch('style') -%>
 <% profile = data.fetch('profile') -%>
 <% footer = data.fetch('footer') -%>
 <% sections = data.fetch('sections') -%>
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
+%% Generated from data/cv.yaml via scripts/render_cv.rb. Do not edit directly.
 
 \documentclass[<%= document.fetch('class_options') %>]{<%= document.fetch('class_name') %>}
-\geometry{left=<%= geometry.fetch('left') %>, top=<%= geometry.fetch('top') %>, right=<%= geometry.fetch('right') %>, bottom=<%= geometry.fetch('bottom') %>, footskip=<%= geometry.fetch('footskip') %>}
-\fontdir[<%= document.fetch('fontdir') %>]
-\colorlet{awesome}{<%= style.fetch('accent_color') %>}
-\setbool{acvSectionColorHighlight}{<%= tex_bool(style.fetch('section_color_highlight')) %>}
-\renewcommand{\acvHeaderSocialSep}{<%= style.fetch('social_separator') %>}
-\usepackage{needspace}
 
 \name{<%= profile.fetch('name_left') %>}{<%= profile.fetch('name_right') %>}
 \position{<%= profile.fetch('position') %>}
@@ -22,6 +15,9 @@
 \email{<%= profile.fetch('email') %>}
 \homepage{<%= profile.fetch('homepage') %>}
 \github{<%= profile.fetch('github') %>}
+<% if profile['version_stamp'] -%>
+\cvversion{<%= profile.fetch('version_stamp') %>}
+<% end -%>
 
 \begin{document}
 \makecvheader
@@ -32,29 +28,70 @@
 
 \urlstyle{same}
 
-\cvsection{Education}
-\begin{cventries}
+\begin{atelierbody}
+
+%%-------- Sidebar (5/12 column) --------
+
+\cvsidesection{Contact}
+\begin{cvsidehonors}
+  \item\relax
+  {\fontsize{9.5}{14}\InterTightRegular\color{atelierText}%
+    <%= profile.fetch('address') %>\\[1mm]
+    <%= profile.fetch('mobile') %>\\[0.5mm]
+    \href{mailto:<%= profile.fetch('email') %>}{<%= profile.fetch('email') %>}\\[0.5mm]
+    \href{https://<%= profile.fetch('homepage') %>}{<%= profile.fetch('homepage') %>}\\[0.5mm]
+    \href{https://github.com/<%= profile.fetch('github') %>}{github.com/<%= profile.fetch('github') %>}}
+\end{cvsidehonors}
+
+\cvsidesection{Education}
+\begin{cvsidehonors}
 <% sections.fetch('education').each do |entry| -%>
-  \cventry
+  \cvsidehonor
     {<%= entry.fetch('degree') %>}
     {<%= entry.fetch('institution') %>}
     {<%= entry.fetch('location') %>}
     {<%= entry.fetch('dates') %>}
-    {
-<% items = entry.fetch('items', []) -%>
-<% if items.any? -%>
-      \begin{cvitems}
+<% items = entry.fetch('items', []) || [] -%>
 <% items.each do |item| -%>
-        \item {<%= item %>}
+  \item[]\relax {\fontsize{8.5}{12}\InterTightRegular\itshape\color{muted}<%= item %>}
 <% end -%>
-      \end{cvitems}
 <% end -%>
-    }
+\end{cvsidehonors}
 
+\cvsidesection{Honors \& Awards}
+\begin{cvsidehonors}
+<% sections.fetch('honors').each do |entry| -%>
+  \cvsidehonor
+    {<%= entry.fetch('award') %>}
+    {<%= entry.fetch('event') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
 <% end -%>
-\end{cventries}
+\end{cvsidehonors}
 
-\cvsection{Professional Experience in Education}
+\cvsidesection{Professional \& Civic Service}
+\begin{cvsidehonors}
+<% sections.fetch('professional_service').each do |entry| -%>
+  \cvsidehonor
+    {<%= entry.fetch('position') %>}
+    {<%= entry.fetch('committee') %>}
+    {<%= entry.fetch('location') %>}
+    {<%= entry.fetch('dates') %>}
+<% end -%>
+\end{cvsidehonors}
+
+\cvsidesection{Credentials}
+\begin{cvsidehonors}
+<% sections.fetch('credentials').each do |entry| -%>
+  \cvsidecredential{<%= entry.fetch('credential') %>}
+<% end -%>
+\end{cvsidehonors}
+
+\tomain
+
+%%-------- Main (7/12 column) --------
+
+\cvsection{Professional Experience}
 \begin{cventries}
 <% sections.fetch('professional_experience').each do |entry| -%>
   \cventry
@@ -62,7 +99,7 @@
     {<%= entry.fetch('organization') %>}
     {<%= entry.fetch('location') %>}
     {<%= entry.fetch('dates') %>}
-<% body = entry.fetch('body_tex', '').strip -%>
+<% body = entry.fetch('body_tex', '').to_s.strip -%>
 <% if body.empty? -%>
     {}
 <% else -%>
@@ -74,14 +111,13 @@
 <% end -%>
 \end{cventries}
 
-\Needspace{10\baselineskip}
 \cvsection{Selected Professional Work}
 <% sections.fetch('publications').each do |subsection| -%>
-\cvsubsection {<%= subsection.fetch('title') %>}
+\cvsubsection{<%= subsection.fetch('title') %>}
 <% if subsection.key?('scope_note') -%>
 
 \par\vspace{1mm}
-{\small\itshape <%= subsection.fetch('scope_note') %>}
+{\fontsize{9}{12}\InterTightRegular\itshape\color{muted} <%= subsection.fetch('scope_note') %>}
 \par\vspace{2mm}
 <% end -%>
 \begin{pubitems}
@@ -92,8 +128,7 @@
 
 <% end -%>
 
-\Needspace{12\baselineskip}
-\cvsection{Selected Presentations and Teaching Experience}
+\cvsection{Selected Presentations \& Teaching}
 \begin{cventries}
 <% sections.fetch('presentations').each do |entry| -%>
   \cventry
@@ -115,42 +150,6 @@
 <% end -%>
 \end{cventries}
 
-\pagebreak
-
-\cvsection{Honors \& Awards}
-\begin{cvhonors}
-<% sections.fetch('honors').each do |entry| -%>
-  \cvhonor
-    {<%= entry.fetch('award') %>}
-    {<%= entry.fetch('event') %>}
-    {<%= entry.fetch('location') %>}
-    {<%= entry.fetch('dates') %>}
-
-<% end -%>
-\end{cvhonors}
-
-\cvsection{Professional/Civic Service}
-\begin{cvhonors}
-<% sections.fetch('professional_service').each do |entry| -%>
-  \cvhonor
-    {<%= entry.fetch('position') %>}
-    {<%= entry.fetch('committee') %>}
-    {<%= entry.fetch('location') %>}
-    {<%= entry.fetch('dates') %>}
-
-<% end -%>
-\end{cvhonors}
-
-\cvsection{Credentials Held}
-\begin{cvhonors}
-<% sections.fetch('credentials').each do |entry| -%>
-  \cvhonor
-    {<%= entry.fetch('credential') %>}
-    {<%= entry.fetch('level') %>}
-    {} 
-    {<%= entry.fetch('dates') %>}
-
-<% end -%>
-\end{cvhonors}
+\end{atelierbody}
 
 \end{document}

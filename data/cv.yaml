@@ -1,32 +1,32 @@
 document:
-  class_name: awesome-cv
+  # Atelier port — see chitwood-cv.cls. All visual tokens (geometry, fonts,
+  # colors, spacing) live in the class; this block only carries the
+  # invariants needed to render.
+  class_name: chitwood-cv
   class_options: '11pt, letterpaper'
-  fontdir: 'fonts/'
-  geometry:
-    left: 2cm
-    top: 2cm
-    right: 2cm
-    bottom: 1.5cm
-    footskip: .5cm
-  style:
-    accent_color: awesome-nephritis
-    section_color_highlight: true
-    social_separator: '\quad\textbar\quad'
 
 profile:
+  # name_left + name_right are joined with a space in the masthead, and the
+  # class appends an accent-colored period. So name_right intentionally has
+  # NO trailing period — it's drawn by \makecvheader in --accent.
   name_left: 'Nicholas R. Chitwood,'
-  name_right: 'Ed.D.'
-  position: 'Administrator, Assessment, Accountability, and Continuous Improvement{\enskip\cdotp\enskip}Riverside County Office of Education'
-  address: '8348 Carriage Ct. Riverside, CA 92508'
+  name_right: 'Ed.D'
+  position: 'Administrator, Assessment, Accountability, and Continuous Improvement\enskip\textperiodcentered\enskip Riverside County Office of Education'
+  address: 'Riverside, CA'
   mobile: '559-303-7730'
   email: 'nicholaschitwood@gmail.com'
   homepage: 'www.nickchitwood.com'
   github: 'nickchitwood'
+  # Optional eyebrow version stamp rendered top-right of the masthead.
+  version_stamp: 'CV \textbullet\ May 2026'
 
+# Footer is drawn entirely by chitwood-cv's \makecvfooter override; these
+# fields are accepted but ignored by the new layout (wordmark + page number
+# only). Kept here so the renderer keeps working.
 footer:
-  left: '\today'
-  center: 'Nicholas R. Chitwood, Ed.D.~~~\textperiodcentered~~~Curriculum Vitae'
-  right: '\thepage'
+  left: ''
+  center: ''
+  right: ''
 
 sections:
   education:
@@ -65,12 +65,17 @@ sections:
           \item {Managed all data operations for the countywide CalKIDS initiative -- negotiating data sharing agreements with the State Treasurer's Office, designing the integration pipeline, and delivering Tableau dashboards monitoring individual and aggregate outcomes -- supporting 23 districts in registering over 32,000 students and facilitating access to \$16,000,000 in college savings funding.}
           \item {Built and managed the data systems for the CSU Direct Admissions Pilot, combining CCGI and CALPADS data via Python API integration with Google Sheets to deliver individualized on-track status reports to counselors at every high school in Riverside County, serving 19,000+ students with school-level permissioning and supporting nearly \$3,000,000 in direct student financial impact across two years. Negotiated the data sharing agreement to enable the partnership.}
           \item {Provided direct data support for the SBHIP Needs Assessment and facilitated coordination between Managed Care Plans and school districts, contributing to a successful submission to DHCS that resulted in over \$7,000,000 in mental health grants awarded to participating districts.}
-          \item {Architected an on-premises countywide data system (RHEL 9, Kubernetes, Docker, Airflow, dbt, SQL Server, Minio, Tableau with row-level security), establishing RCOE's first integrated data warehouse supporting standardized reporting across the Educational Services Division.}
+          \item {Architected an on-premises countywide data system (RHEL 9, Kubernetes, Docker, Airflow, dbt, SQL Server, Minio, Tableau with row-level security) -- RCOE's first integrated data warehouse -- supporting the measurement of program impact on student achievement, district systems of support, and standardized reporting across the Educational Services Division.}
           \item {Navigated data privacy and data sharing requirements across multiple initiatives, leading DSA negotiations with external partners (State Treasurer's Office, CSU system) and advising internal teams on FERPA compliance, statutory requirements, and cross-agency data governance.}
           \item {Provided direct data and evaluation support across the Superintendent's Initiatives, including coordination between Managed Care Plans and districts (SBHIP), suicide prevention (SPARE), socioemotional learning (CalHOPE), and Whole Health Screening (MHSSA).}
           \item {Co-led the Statewide Data Visualization COE Network with the San Diego County Office of Education, building data visualization capacity across county offices statewide.}
           \item {Established a cross-divisional Student Data PLC at RCOE spanning Educational Services, Student Programs and Services, Early Education Services, Leadership, Wellness, and Student Services, addressing technical and programmatic data system needs across the organization.}
-          \item {Provided technical leadership across the AACI data team (two administrators, a coordinator, temporary contractors, and interns), supporting a 48\% increase in data project volume (101 projects in 2025--26 vs. 68 prior year) while cross-training new staff in evaluation, survey design, and research request fulfillment.}
+          \item {Member of the RCOE LCAP Fastpass team, contributing review on compliance in annual district LCAP submissions to inform the Superintendent's plan approvals across Riverside County's 23 districts.}
+          \item {Facilitate the Data Subteam of the SoCal SOS Continuous Improvement: Data, Differentiated Assistance, and LCAP Workgroup, coordinating cross-COE data practice in support of data literacy.}
+          \item {Co-facilitated the Riverside County Assessment Network (RCAN) for several months during the transition following the prior assessment administrator's retirement.}
+          \item {Supported program evaluations across the Educational Services Division -- including the Bourns Science and Technology Education Partnership (STEP) conference survey and analysis and the Migrant Education program evaluation -- in addition to ongoing research request fulfillment.}
+          \item {Provided technical leadership on AACI data projects and shared evaluation, survey design, and research request workflows across peer administrators, coordinators, contractors, and interns -- contributing to a 48\% increase in unit project volume (101 projects in 2025--26 vs. 68 prior year).}
+          \item {Serve as evaluator of record for the AACI unit's administrative support position.}
           \item {Named 2024 Classified Administrator of the Year, Riverside County Office of Education.}
         \end{cvitems}
 
@@ -143,7 +148,7 @@ sections:
       location: 'Riverside, CA'
       dates: 'March 5, 2026'
       items:
-        - 'Co-presented a workshop on CALPADS 15.2 submission and its role in California School Dashboard reporting, covering the CDE''s new Course Code 9227 alignment and AP credit reporting based on final grades. Session addressed how miscoding affects College & Career Indicator data and provided strategies for building collaboration among registrars, counselors, CTE leaders, and site administrators to improve data accuracy and protect student outcomes.'
+        - 'Co-presented a workshop on CALPADS 15.2 submission and its role in California School Dashboard reporting, covering the CDE''s new Course Code 9227 alignment and AP credit reporting based on final grades. Session addressed how miscoding affects College \& Career Indicator data and provided strategies for building collaboration among registrars, counselors, CTE leaders, and site administrators to improve data accuracy and protect student outcomes.'
     - role: 'Presenter'
       event: 'RCOE--Riverside Community College District Executive Team Meeting'
       location: 'Riverside, CA'
