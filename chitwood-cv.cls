@@ -24,10 +24,13 @@
 \ProcessOptions\relax
 \LoadClass{awesome-cv}
 
-% Eso-pic for the top accent bar; paracol for 5/7 split; tikz for marker squares.
+% Eso-pic for the top accent bar; paracol for 5/7 split; tikz for marker
+% squares; zref-savepos so we can capture the y-position of the masthead
+% rule and use it as the sidebar fill's top edge (no more guessing).
 \RequirePackage{eso-pic}
 \RequirePackage{paracol}
 \RequirePackage{tikz}
+\RequirePackage{zref-savepos}
 
 %-------------------------------------------------------------------------------
 % Atelier color tokens (DESIGN.md §3). Override Awesome-CV's palette so
@@ -100,24 +103,36 @@
 \geometry{letterpaper, left=0.6in, right=0.6in, top=0.7in, bottom=0.75in,
           headheight=0pt, headsep=0pt, footskip=0.35in}
 
-% Page architecture — every page carries:
-%   1. A 2bp forest-green accent bar flush to the top edge
-%   2. A sidebar fill (--sidebar) covering the left ~42% of the page
-% Both drawn via eso-pic so they survive paracol breaks. The top bar is FG
-% so the sidebar fill (BG) cannot cover it.
+% Page architecture:
+%   1. 2bp forest-green accent bar flush to the top edge of every page
+%   2. Sidebar fill (page 1 only) — drawn via eso-pic so it bleeds to the
+%      left page edge and extends from below the masthead rule down to
+%      just above the footer rule. Paracol's native column background
+%      doesn't bleed past the column box, so eso-pic is the right tool.
+% Bottom edge of fill — fixed: 0.5in above page bottom, just above the
+% footer hairline rule. Width 3.9in: bleeds to left page edge, extends
+% ~0.2in past the sidebar text column for right-side padding.
+\newlength{\atelierFillBottom}
+\setlength{\atelierFillBottom}{0.5in}
+\newlength{\atelierFillWidth}
+\setlength{\atelierFillWidth}{3.9in}
 
-% Width of the sidebar fill — slightly wider than the sidebar text column so
-% the right edge of the fill lands inside the gutter between columns.
-\newlength{\atelierSidebarFillWidth}
-\setlength{\atelierSidebarFillWidth}{0.42\paperwidth}
-
-% Sidebar fill only on page 1. Pages 2+ go full-width single-column, so the
-% fill would just be empty cream with no sidebar content above it.
 \AddToShipoutPictureBG{%
   \ifnum\value{page}=1\relax
-    \AtPageUpperLeft{%
-      \put(0,-\paperheight){%
-        \color{sidebar}\rule{\atelierSidebarFillWidth}{\paperheight}%
+    \AtPageLowerLeft{%
+      % Fill top y = position of masthead rule (captured via zsavepos).
+      % First compile pass — ref undefined, fall back to a placeholder so
+      % layout completes. Second pass reads .aux and aligns exactly.
+      \zref@ifrefundefined{atelier-masthead-rule}{%
+        \put(0pt, \atelierFillBottom){%
+          \color{sidebar}\rule{\atelierFillWidth}{8.5in}%
+        }%
+      }{%
+        \put(0pt, \atelierFillBottom){%
+          \color{sidebar}\rule{\atelierFillWidth}{%
+            \dimexpr \zposy{atelier-masthead-rule}sp - \atelierFillBottom \relax%
+          }%
+        }%
       }%
     }%
   \fi
@@ -199,6 +214,10 @@
   \fi
   % Strong rule beneath masthead (DESIGN.md §7.4)
   \noindent\color{rule}\rule{\linewidth}{0.6pt}\par
+  % Capture the y-position of this rule for the sidebar fill below.
+  % \zposy returns scaled points from page bottom; multi-pass compile
+  % needed (first pass writes .aux, second pass reads it).
+  \zsavepos{atelier-masthead-rule}%
   \endgroup
   \vspace{4mm}
 }
@@ -313,6 +332,9 @@
 % Credentials / Professional service when rendered in the 5/12 column.
 \newenvironment{cvsidehonors}{%
   \par\vspace{0.5mm}%
+  % Right padding so sidebar text doesn't kiss the right edge of the
+  % sidebar fill rectangle. ~10pt of breathing room before the fill ends.
+  \rightskip=10pt\relax
   \begin{list}{}{%
     \setlength{\leftmargin}{0pt}%
     \setlength{\labelwidth}{0pt}%

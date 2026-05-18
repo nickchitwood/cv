@@ -73,38 +73,50 @@
 
 %%-------- Main (7/12 column, page 1 only) — Professional Experience opens --------
 
-\cvsection{Professional Experience}
-\begin{cventries}
 <% pro_exp = sections.fetch('professional_experience') -%>
 <% first = pro_exp.first -%>
+<%
+  # Split the AACI Admin body into hero (page-1 paracol) and continuation
+  # (full-width on page 2+). First 4 bullets fit in the narrow paracol main
+  # column on page 1; rest flow at full width after paracol ends.
+  body_lines = first.fetch('body_tex').split("\n")
+  item_lines = body_lines.select { |l| l.strip.start_with?('\item') }
+  hero_n = 4
+  hero_items = item_lines.first(hero_n)
+  rest_items = item_lines.drop(hero_n)
+-%>
+
+\cvsection{Professional Experience}
+\begin{cventries}
   \cvheroentry
     {<%= first.fetch('title') %>}
     {<%= first.fetch('organization') %>}
     {<%= first.fetch('location') %>}
     {<%= first.fetch('dates') %>}
-    {}
+    {
+      \begin{cvitems}
+<% hero_items.each do |item| -%>
+<%= item %>
+<% end -%>
+      \end{cvitems}
+    }
 \end{cventries}
 
 \end{atelierbody}
 
-%% Force a clean break to page 2 so the AACI Admin body bullets don't
-%% flow under the page-1 sidebar fill. Page 1 stays a hero; full-width
-%% content owns page 2+.
-\newpage
-
 %%================================================================
-%% Pages 2+ — full-width single column. Same Atelier typography,
-%% color, marker squares, footer wordmark — no sidebar.
+%% After paracol ends, the remaining AACI Admin bullets continue at
+%% full width on page 2+, then the rest of Professional Experience.
+%% Sidebar eso-pic fill is gated on page 1 only.
 %%================================================================
 
-%% Continuation anchor — names which role the bullets below belong to
-%% (the cventry header for the current role lives on page 1).
-\noindent{\fontsize{10}{13}\InterTightRegular\itshape\color{muted}%
-  <%= first.fetch('title') %> \textperiodcentered{} <%= first.fetch('organization') %> \textperiodcentered{} continued%
-}\par\vspace{3mm}
-
-%% Current-role bullets (body of the AACI Administrator cventry above)
-<%= first.fetch('body_tex') %>
+<% if rest_items.any? -%>
+\begin{cvitems}
+<% rest_items.each do |item| -%>
+<%= item %>
+<% end -%>
+\end{cvitems}
+<% end -%>
 
 %% Remaining roles
 \begin{cventries}
