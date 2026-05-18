@@ -55,16 +55,15 @@ sections:
       dates: 'Jul 2022 -- Present'
       body_tex: |-
         \begin{cvitems}
-          \item {Coordinate the Data Subteam of the SoCal SOS Continuous Improvement: Data, Differentiated Assistance, and LCAP Workgroup -- cross-COE data practice as part of RCOE's California System of Support Geographic Lead Agency responsibilities.}
+          \item {Coordinate the Data Subteam of the SoCal SOS Continuous Improvement Workgroup, leading cross-COE data practice as part of RCOE's California System of Support Geographic Lead Agency responsibilities.}
           \item {Co-led the Statewide Data Visualization Community of Practice Network with the San Diego County Office of Education, building data visualization capacity across county offices statewide.}
           \item {Co-facilitated the Riverside County Assessment Network (RCAN) through the prior administrator's retirement transition, sustaining countywide assessment leader convening.}
           \item {Architected an on-premises countywide data system (RHEL 9, Kubernetes, Docker, Airflow, dbt, SQL Server, Minio, Tableau with row-level security) -- RCOE's first integrated data warehouse -- supporting the measurement of program impact on student achievement, district systems of support, and standardized reporting across the Educational Services Division.}
-          \item {Led data operations across major countywide initiatives -- CalKIDS college savings (\$16M facilitated, 32,000+ students), CSU Direct Admissions Pilot (\$3M+ student financial impact, 19,000+ students), and the SBHIP Needs Assessment (\$7M+ in mental health grants to participating districts) -- negotiating data sharing agreements with the State Treasurer's Office and CSU Chancellor's Office, designing integration pipelines, and delivering Tableau dashboards with school-level permissioning.}
+          \item {Led data operations across major countywide initiatives -- CalKIDS college savings (\$16M facilitated, 32,000+ students), CSU Direct Admissions Pilot (\$3M+ student financial impact, 19,000+ students), and the SBHIP Needs Assessment (\$7M+ in mental health grants) -- negotiating data sharing agreements with the State Treasurer's Office and CSU Chancellor's Office, designing integration pipelines, and delivering Tableau dashboards with school-level permissioning.}
           \item {Provided direct data and evaluation support across the Superintendent's Initiatives, including coordination between Managed Care Plans and districts (SBHIP), suicide prevention (SPARE), socioemotional learning (CalHOPE), and Whole Health Screening (MHSSA).}
           \item {Established a cross-divisional Student Data PLC at RCOE spanning Educational Services, Student Programs and Services, Early Education Services, Leadership, Wellness, and Student Services, addressing technical and programmatic data system needs across the organization.}
           \item {Maintain RCOE's Data Asset Catalog and serve as cross-divisional consultant on student data sharing -- advising the Chief Strategic Communications Office, the Career Technical Education unit, and other divisions on FERPA compliance, statutory requirements, and DSA structure for new initiatives -- building on the data governance framework first established as Data Coordinator.}
           \item {Supported program evaluations across the Educational Services Division -- including the Bourns Science and Technology Education Partnership (STEP) conference survey and analysis and the Migrant Education program evaluation -- in addition to ongoing research request fulfillment.}
-          \item {Member of the RCOE LCAP Fastpass team, contributing review on compliance in annual district LCAP submissions to inform the Superintendent's plan approvals across Riverside County's 23 districts.}
           \item {Mentored three interns in educational data analysis and visualization -- one of whom secured a data visualization position on completion of the placement; cross-trained peer administrators, coordinators, and contractors in evaluation, survey design, and research request workflows, contributing to a 48\% increase in unit project volume (101 projects in 2025--26 vs. 68 prior year); serve as evaluator of record for the AACI unit's administrative support position.}
           \item {Named 2024 Classified Administrator of the Year, Riverside County Office of Education.}
         \end{cvitems}
@@ -79,7 +78,6 @@ sections:
           \item {Built a countywide linked analytic dataset integrating CALPADS, CAASPP, ELPAC, and College Board records for 430,000+ students in partnership with UC Riverside, enabling the Haynes Foundation research project "Examining Disparities in Mathematics Achievement to Promote Equity."}
           \item {Contributed to annual LCAP review and approval for 23 districts, focusing on metric rigor and Increased/Improved Services compliance for unduplicated pupils, and delivered recurring training to district LCAP authors on outcome monitoring and accountability alignment.}
           \item {Initiated RCOE's first formal data governance framework, producing a policies-and-procedures manual and data inventory that standardized privacy and quality practices and became part of Educational Services Division onboarding.}
-          \item {Facilitated cross-county data practice workgroups spanning five County Offices of Education (Imperial, Orange, Riverside, San Bernardino, San Diego), creating a regional venue for sharing data tools, iterating on shared resources, and building capacity in COVID-era data analysis and CSI/ATSI identification.}
         \end{cvitems}
 
     - title: 'Curriculum and Instruction Coordinator'
@@ -127,18 +125,15 @@ sections:
       body_tex: ''
 
   presentations:
+    # Strict reverse-chronological. CITE (Nov 2025, no day) leads; the two
+    # CERA entries (Nov 4, 2025 — specific day) follow; CSIS (Sep 2025);
+    # CISC Unlocking (Feb 19, 2025).
     - role: 'Content Co-Developer (with CSIS)'
       event: 'CITE Conference -- "Hands-On Data: Building Efficient Pipelines for Effective Analysis"'
       location: 'Sacramento, CA'
       dates: 'Nov 2025'
       items:
         - 'Co-developed session content with California School Information Services (CSIS) showcasing the technical architecture of RCOE''s custom data pipeline; included hands-on SQL analysis and automated state-level data collection strategies.'
-    - role: 'Featured Presenter'
-      event: 'CSIS Statewide Data Governance Academy -- Data Governance in Practice'
-      location: 'Virtual (Statewide)'
-      dates: 'Sep 2025'
-      items:
-        - 'One of five featured RCOE presenters in a CSIS-produced statewide video series sharing RCOE''s data governance journey and frameworks for county offices and LEAs in Differentiated Assistance through the CALPADS pathway.'
     - role: 'Co-Presenter'
       event: 'CERA Conference -- "Trust, Transfer, Transform: The Role of Data Agreements in Scaling Student Impact"'
       location: 'Riverside, CA'
@@ -157,18 +152,6 @@ sections:
       dates: 'Feb 19, 2025'
       items:
         - 'Panelist on leveraging interoperable data standards and real-time APIs to accelerate equity-focused decision-making, alongside San Diego COE and USC Rossier EdPolicy Hub, for the Curriculum and Instruction Steering Committee of the California County Superintendents.'
-    - role: 'Co-Presenter'
-      event: 'CISC Symposium -- "Sharing is Caring: How Data-Sharing Supports Student Success"'
-      location: 'Monterey, CA'
-      dates: 'Feb 22, 2024'
-      items:
-        - 'Co-presented with M. Bazanos (RCOE) on how county offices leverage data-sharing within California''s System of Support, providing tools, protocols, and presentation resources for local continuous improvement contexts.'
-    - role: 'Co-Presenter (with CCEE, CDE, and Public Advocates)'
-      event: 'Dashboard 101 Webinar for the Statewide System of Support'
-      location: 'Sacramento, CA'
-      dates: 'Jan 2019'
-      items:
-        - 'Member of content development and presentation team for the Dashboard 101 statewide webinar, in collaboration with the California Collaborative for Educational Excellence (CCEE), California Department of Education (CDE), and Public Advocates; developed content around the Academic Indicator and strategies for presenting Dashboard outcomes to stakeholders.'
 
   honors:
     - award: 'Classified Administrator of the Year'
@@ -186,23 +169,8 @@ sections:
   # reports can be referenced in the cover letter.
   publications: []
 
-  professional_service:
-    - position: 'Treasurer'
-      committee: 'Poly Band Boosters Corporation'
-      location: 'Riverside, CA'
-      dates: '2024 -- Present'
-    - position: 'RFP Review Panelist'
-      committee: 'Education Technology Joint Powers Authority - RFP 23/24-02: Assessment and Analytics Platforms'
-      location: 'California'
-      dates: '2023'
-    - position: 'Commissioner'
-      committee: 'Human Relations Commission - City of Riverside'
-      location: 'Riverside, CA'
-      dates: '2016 -- 2019'
-    - position: 'Member'
-      committee: 'School Site Council - Washington Elementary'
-      location: 'Riverside, CA'
-      dates: '2018 -- 2019'
+  # Professional & Civic Service cut from resume (template gates on .any?).
+  professional_service: []
 
   credentials:
     - credential: 'Administrative Services Credential, Clear (2019)'
