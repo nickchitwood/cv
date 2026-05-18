@@ -264,6 +264,18 @@
   \par
 }
 
+% Stacked variant of cventry for narrow columns (e.g. the page-1 paracol
+% hero). Date sits on its own line below the org line — keeps the bold
+% title from fighting the date for horizontal space when wrapping.
+\newcommand*{\cvheroentry}[5]{%
+  \par\vspace{2mm}%
+  {\entrytitlestyle{#1}}\par\vspace{0.4mm}
+  {\entrypositionstyle{#2\ \textperiodcentered\ #3}}\par\vspace{0.2mm}
+  {\entrydatestyle{#4}}\par\nopagebreak[3]
+  \ifstrempty{#5}{}{#5\par}%
+  \vspace{1mm}%
+}
+
 % Args: \cventry{job-title}{organization}{location}{date}{body}
 %   Bold (entrytitle): the job title (#1)  — what the role was
 %   Muted line below:  org · location  (#2 · #3)
@@ -316,10 +328,14 @@
 % Usage: \cvsidehonor{title (e.g. Degree)}{org/event}{location}{dates}
 \newcommand*{\cvsidehonor}[4]{%
   \item\relax
-  {\fontsize{10}{13}\InterTightSemiBold\color{atelierText}#1}\\[0.5mm]
-  \ifempty{#2}{}{{\fontsize{9}{12}\InterTightRegular\color{muted}#2}\\}%
+  % Set hyphenation suppression at the item level (not inside a sub-group)
+  % so it's still active when the item's whole paragraph is line-broken.
+  % This is what stops "Policy" from breaking to "Pol-icy" in the sidebar.
+  \hyphenpenalty=10000\exhyphenpenalty=10000\emergencystretch=3em
+  {\fontsize{9.5}{12}\InterTightSemiBold\color{atelierText}#1}\\[0.5mm]
+  \ifempty{#2}{}{{\fontsize{8.5}{11}\InterTightRegular\color{muted}#2}\\}%
   \ifempty{#3#4}{}{%
-    {\fontsize{9}{12}\InterTightRegular\color{muted}%
+    {\fontsize{8.5}{11}\InterTightRegular\color{muted}%
       \ifempty{#3}{}{#3}\ifempty{#3#4}{}{\ifempty{#3}{}{\ \textperiodcentered\ }}\ifempty{#4}{}{#4}}%
   }%
 }

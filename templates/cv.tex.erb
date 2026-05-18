@@ -77,7 +77,7 @@
 \begin{cventries}
 <% pro_exp = sections.fetch('professional_experience') -%>
 <% first = pro_exp.first -%>
-  \cventry
+  \cvheroentry
     {<%= first.fetch('title') %>}
     {<%= first.fetch('organization') %>}
     {<%= first.fetch('location') %>}
@@ -96,6 +96,12 @@
 %% Pages 2+ — full-width single column. Same Atelier typography,
 %% color, marker squares, footer wordmark — no sidebar.
 %%================================================================
+
+%% Continuation anchor — names which role the bullets below belong to
+%% (the cventry header for the current role lives on page 1).
+\noindent{\fontsize{10}{13}\InterTightRegular\itshape\color{muted}%
+  <%= first.fetch('title') %> \textperiodcentered{} <%= first.fetch('organization') %> \textperiodcentered{} continued%
+}\par\vspace{3mm}
 
 %% Current-role bullets (body of the AACI Administrator cventry above)
 <%= first.fetch('body_tex') %>

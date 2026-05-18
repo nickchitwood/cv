@@ -33,7 +33,7 @@ sections:
     - degree: 'Ed.D., Education Leadership and Policy'
       institution: 'University of California, Los Angeles'
       location: 'Los Angeles, CA'
-      dates: 'March 2018'
+      dates: 'Mar 2018'
       items:
         - 'Dissertation: The Effectiveness of Leadership Behaviors in Influencing Data-Driven Decision-Making by Teachers'
         - 'Dissertation Co-Chairs: Mark Hansen, Ph.D. and Christina Christie, Ph.D.'
@@ -59,7 +59,7 @@ sections:
     - title: 'Administrator, Assessment, Accountability, and Continuous Improvement'
       organization: 'Riverside County Office of Education'
       location: 'Riverside, CA'
-      dates: 'July 2022 - Present'
+      dates: 'Jul 2022 -- Present'
       body_tex: |-
         \begin{cvitems}
           \item {Managed all data operations for the countywide CalKIDS initiative -- negotiating data sharing agreements with the State Treasurer's Office, designing the integration pipeline, and delivering Tableau dashboards monitoring individual and aggregate outcomes -- supporting 23 districts in registering over 32,000 students and facilitating access to \$16,000,000 in college savings funding.}
@@ -82,7 +82,7 @@ sections:
     - title: 'Data Coordinator'
       organization: 'Riverside County Office of Education'
       location: 'Riverside, CA'
-      dates: 'Apr 2018-June 2022'
+      dates: 'Apr 2018 -- Jun 2022'
       body_tex: |-
         \begin{cvitems}
           \item {Built a regression-based "Positive Outlier" model spanning all 23 Riverside County districts and 500+ schools, controlling for student demographics across ELA, Math, and NGSS to identify schools outperforming expectations -- used by the Instructional Services Unit to identify and share effective practices across similar-demographic schools.}
@@ -97,7 +97,7 @@ sections:
     - title: 'Curriculum and Instruction Coordinator'
       organization: 'Menifee Union School District'
       location: 'Menifee, CA'
-      dates: 'Jun 2016-Apr 2018'
+      dates: 'Jun 2016 -- Apr 2018'
       body_tex: |-
         \begin{cvitems}
           \item {Built a real-time demographic dashboard in Tableau by querying the Illuminate SIS PostgreSQL backend, providing district leaders current enrollment and demographic visibility across 13 school sites without manual SIS reporting.}
@@ -110,7 +110,7 @@ sections:
     - title: 'TOSA - Compliance Coordinator'
       organization: 'Riverside Unified School District'
       location: 'Riverside, CA'
-      dates: 'Aug 2013-Jun 2016'
+      dates: 'Aug 2013 -- Jun 2016'
       body_tex: |-
         \begin{cvitems}
           \item {Led the district's Federal Program Monitoring reviews across two cycles (online and in-person), mitigating over \$500,000 in potential compliance findings through corrective action and stakeholder engagement.}
@@ -122,7 +122,7 @@ sections:
     - title: 'Director of Bands, Ramona High School'
       organization: 'Riverside Unified School District'
       location: 'Riverside, CA'
-      dates: 'Aug 2009-Jun 2013'
+      dates: 'Aug 2009 -- Jun 2013'
       body_tex: |-
         \begin{cvitems}
           \item {Directed an instrumental music program serving 100+ students across marching, concert, and jazz ensembles, earning a bronze medal at the SCSBOA 2A Championships.}
@@ -133,62 +133,62 @@ sections:
     - title: 'Teacher'
       organization: 'West Palms Conservatory, Victor Elementary School District'
       location: 'Victorville, CA'
-      dates: 'Aug 2008-Jun 2009'
+      dates: 'Aug 2008 -- Jun 2009'
       body_tex: ''
 
     - title: 'Teacher'
       organization: 'Los Banos High School, Los Banos Unified School District'
       location: 'Los Banos, CA'
-      dates: 'Aug 2006-Jun 2008'
+      dates: 'Aug 2006 -- Jun 2008'
       body_tex: ''
 
   presentations:
     - role: 'Co-Presenter (with Kerry Bobbitt)'
       event: 'CALPADS Workshop -- "Data Done Right: Leveraging CALPADS to Ensure College and Career Indicator Accuracy"'
       location: 'Riverside, CA'
-      dates: 'March 5, 2026'
+      dates: 'Mar 5, 2026'
       items:
         - 'Co-presented a workshop on CALPADS 15.2 submission and its role in California School Dashboard reporting, covering the CDE''s new Course Code 9227 alignment and AP credit reporting based on final grades. Session addressed how miscoding affects College \& Career Indicator data and provided strategies for building collaboration among registrars, counselors, CTE leaders, and site administrators to improve data accuracy and protect student outcomes.'
     - role: 'Presenter'
       event: 'RCOE--Riverside Community College District Executive Team Meeting'
       location: 'Riverside, CA'
-      dates: 'January 21, 2026'
+      dates: 'Jan 21, 2026'
       items:
         - 'Presented longitudinal National Student Clearinghouse and A-G completion data to joint RCOE and RCCD executive leadership, analyzing K-12 to community college enrollment and program completion outcomes across six graduating cohorts to inform K-16 partnership strategy.'
     - role: 'Co-Presenter'
       event: 'California Educational Research Association (CERA) Conference -- "Trust, Transfer, Transform: The Role of Data Agreements in Scaling Student Impact"'
       location: 'Riverside, CA'
-      dates: 'November 4, 2025'
+      dates: 'Nov 4, 2025'
       items:
         - 'Co-presented with M. Bazanos and G. Compton (RCOE), A. Grommo (CSU Chancellor''s Office), and M. Hansen (CalKIDS Institute, UCLA) on building county-led data-sharing partnerships, featuring case studies on CalKIDS, CSU direct admissions, and local transcript analysis to improve postsecondary pathways across Riverside County.'
     - role: 'Co-Presenter'
       event: 'California Educational Research Association (CERA) Conference -- "From Shiny to Strategic: Choosing Data Tools That Empower Educators and Align with Real-World Practice"'
       location: 'Riverside, CA'
-      dates: 'November 4, 2025'
+      dates: 'Nov 4, 2025'
       items:
         - 'Co-presented with S. Shin (CCEE), J. Watson (SDCOE), and J. Massie (SBCSS) on a collaborative framework for evaluating and selecting data platforms, introducing a multi-COE resource guide organized around six domains: integration, usability, professional learning, cost, technical capacity, and data security.'
     - role: 'Content Co-Developer (with California School Information Services)'
       event: 'CITE Conference -- "Hands-On Data: Building Efficient Pipelines for Effective Analysis"'
       location: 'Sacramento, CA'
-      dates: 'November 2025'
+      dates: 'Nov 2025'
       items:
         - 'Co-developed session content showcasing the technical architecture of RCOE''s custom data pipeline powering countywide BI and accountability dashboards, in collaboration with California School Information Services (CSIS). Session included hands-on SQL analysis and automated state-level data collection strategies.'
     - role: 'Featured Presenter (with other RCOE Data Leadership)'
       event: 'CSIS Statewide Data Governance Academy -- Data Governance in Practice'
       location: 'Virtual (Statewide)'
-      dates: 'September 2025'
+      dates: 'Sep 2025'
       items:
         - 'One of five featured RCOE presenters in a statewide video series produced by California School Information Services (CSIS), sharing RCOE''s data governance journey and practical frameworks for county offices and LEAs building enterprise-level data practices. Series designed to support COEs and LEAs in Differentiated Assistance through the CALPADS pathway.'
     - role: 'Panelist'
       event: 'CISC Symposium -- "Unlocking Student Data to Close Equity Gaps"'
       location: 'Anaheim, CA'
-      dates: 'February 19, 2025'
+      dates: 'Feb 19, 2025'
       items:
         - 'Panelist on leveraging interoperable data standards and real-time APIs to accelerate equity-focused decision-making, alongside representatives from San Diego COE and the USC Rossier EdPolicy Hub, for the Curriculum and Instruction Steering Committee of the California County Superintendents.'
     - role: 'Co-Presenter'
       event: 'Excellence Through Equity Conference -- "Scholastic Esports: Evidence of Equitable Engagement"'
       location: 'Riverside, CA'
-      dates: 'September 20, 2024'
+      dates: 'Sep 20, 2024'
       items:
         - 'Co-presented data analysis of scholastic esports participation demographics, demonstrating equitable engagement patterns across student groups and school sites in Riverside County.'
     - role: 'Lightning Talk Presenter'
@@ -200,25 +200,25 @@ sections:
     - role: 'Co-Presenter'
       event: 'Keys to Success: California College and Career Indicators (CCI) Convening'
       location: 'Riverside, CA'
-      dates: 'April 12, 2024'
+      dates: 'Apr 12, 2024'
       items:
         - 'Co-presented with K. Bobbitt and Y. Nava (RCOE) and D. Mann (Val Verde USD) on California Dashboard CCI indicators, student placement, and data interpretation, incorporating RCOE-built Tableau visualizations for district leaders and counselors.'
     - role: 'Co-Presenter'
       event: 'CISC Symposium -- "Sharing is Caring: How Data-Sharing Supports Student Success"'
       location: 'Monterey, CA'
-      dates: 'February 22, 2024'
+      dates: 'Feb 22, 2024'
       items:
         - 'Co-presented with M. Bazanos (RCOE) on how county offices leverage data-sharing to enhance technical assistance within California''s System of Support, providing tools, protocols, and presentation resources for attendees to apply in local continuous improvement contexts.'
     - role: 'Co-Presenter'
       event: 'California Educational Research Association (CERA) Conference -- "Diagnosing System Inequities Through Transcript Analysis and the Measuring Student Learning Project"'
       location: 'Anaheim, CA'
-      dates: 'September 22, 2022'
+      dates: 'Sep 22, 2022'
       items:
         - 'Co-presented with M. Bazanos and G. Compton (RCOE) on leveraging transcript analysis and course grade distribution data to diagnose system-level inequities across middle, high, and alternative schools in Riverside County, with implications for continuous improvement and COE support services.'
     - role: 'Presenter'
       event: 'Chief Business Officers'' Network, Riverside County Office of Education -- "LCAP Analysis: Most Common Themes"'
       location: 'Riverside, CA'
-      dates: 'September 16, 2022'
+      dates: 'Sep 16, 2022'
       items:
         - 'Presented cross-district LCAP thematic analysis to the Riverside County Chief Business Officers'' network, highlighting trends in district actions and services across 23 districts.'
     - role: 'Presenter'
@@ -230,19 +230,19 @@ sections:
     - role: 'Presenter'
       event: 'CALPADS Workshop -- Improved Data Quality and Accuracy'
       location: 'Bishop, CA'
-      dates: 'Aug. 2019'
+      dates: 'Aug 2019'
       items:
         - 'Presented a full day workshop on the California Longitudinal Pupil Achievement and Data System (CALPADS) for non-technical stakeholders within the education system, focused on developing an understanding of the accountability, assessment, and individual student context for data entry and management by site and district staff.'
     - role: 'Co-Presenter (with CCEE, CDE, and Public Advocates)'
       event: 'Dashboard 101 Webinar for the Statewide System of Support'
       location: 'Sacramento, CA'
-      dates: 'Jan. 2019'
+      dates: 'Jan 2019'
       items:
         - 'Served as member of content development and presentation team for Dashboard 101 statewide webinar, in collaboration with the California Collaborative for Educational Excellence (CCEE), California Department of Education (CDE), and Public Advocates. Developed and presented content specifically around understanding the Academic Indicator, as well as strategies for district and school leaders in presenting Dashboard outcomes to stakeholders and jointly implementing strategies to respond to those outcomes.'
     - role: 'Presenter'
       event: 'California All-State Music Education Conference (CASMEC) -- "A Changing Federal and State Landscape: What it Means for Music Educators"'
       location: 'San Jose, CA'
-      dates: 'Feb. 2017'
+      dates: 'Feb 2017'
       items:
         - 'Presented on the changing education landscape in regard to the Every Student Succeeds Act and the Local Control Funding Formula, and key leverage points in the education system that music educators could utilize in order to obtain more fiscal resources for their programs.'
 
@@ -258,15 +258,15 @@ sections:
     - award: 'Ideal Active Achievement Award'
       event: 'Kappa Kappa Psi Honorary Band Fraternity - Western District'
       location: 'Las Vegas, NV'
-      dates: 'Mar. 2007'
+      dates: 'Mar 2007'
     - award: 'Ritchie Clendenin "Outstanding Bandsman"'
       event: 'Fresno State Bulldog Marching Band'
       location: 'Fresno, CA'
-      dates: 'Spr. 2006'
+      dates: 'Spring 2006'
     - award: 'Dean''s List (5 semesters)'
       event: 'CSU-Fresno'
       location: 'Fresno, CA'
-      dates: '2001-2006'
+      dates: '2001 -- 2006'
 
   publications:
     - title: 'Automated Report Series'
@@ -294,7 +294,7 @@ sections:
     - position: 'Treasurer'
       committee: 'Poly Band Boosters Corporation'
       location: 'Riverside, CA'
-      dates: '2024-Present'
+      dates: '2024 -- Present'
     - position: 'RFP Review Panelist'
       committee: 'Education Technology Joint Powers Authority - RFP 23/24-02: Assessment and Analytics Platforms'
       location: 'California'
@@ -302,23 +302,23 @@ sections:
     - position: 'Commissioner'
       committee: 'Human Relations Commission - City of Riverside'
       location: 'Riverside, CA'
-      dates: '2016-2019'
+      dates: '2016 -- 2019'
     - position: 'Member'
       committee: 'School Site Council - Washington Elementary'
       location: 'Riverside, CA'
-      dates: '2018-2019'
+      dates: '2018 -- 2019'
     - position: 'Vice-President'
       committee: 'California Band Directors'' Association'
       location: 'California'
-      dates: '2011-2015'
+      dates: '2011 -- 2015'
     - position: 'Board Member'
       committee: 'California Music Education Association - Southeastern Section'
       location: 'California'
-      dates: '2013-2015'
+      dates: '2013 -- 2015'
     - position: 'Member-at-Large'
       committee: 'California Band Directors'' Association'
       location: 'California'
-      dates: '2015-2017'
+      dates: '2015 -- 2017'
 
   credentials:
     - credential: 'Administrative Services Credential, Clear (2019)'
