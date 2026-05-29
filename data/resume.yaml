@@ -56,7 +56,7 @@ sections:
       body_tex: |-
         \begin{cvitems}
           \item {Coordinate the Data Subteam of the SoCal SOS Continuous Improvement Workgroup, leading cross-COE data practice as part of RCOE's California System of Support Geographic Lead Agency responsibilities.}
-          \item {Co-led the Statewide Data Visualization Community of Practice Network with the San Diego County Office of Education, building data visualization capacity across county offices statewide.}
+          \item {Co-led the Statewide Data Visualization Network with the San Diego County Office of Education, building data visualization capacity across county offices statewide.}
           \item {Co-facilitated the Riverside County Assessment Network (RCAN) through the prior administrator's retirement transition, sustaining countywide assessment leader convening.}
           \item {Architected an on-premises countywide data system (RHEL 9, Kubernetes, Docker, Airflow, dbt, SQL Server, Minio, Tableau with row-level security) -- RCOE's first integrated data warehouse -- supporting the measurement of program impact on student achievement, district systems of support, and standardized reporting across the Educational Services Division.}
           \item {Led data operations across major countywide initiatives -- CalKIDS college savings (\$16M facilitated, 32,000+ students), CSU Direct Admissions Pilot (\$3M+ student financial impact, 35,000+ students over two years), and the SBHIP Needs Assessment (\$7M+ in mental health grants) -- negotiating data sharing agreements with the State Treasurer's Office and CSU Chancellor's Office, designing integration pipelines, and delivering Tableau dashboards with school-level permissioning.}
