@@ -7,9 +7,12 @@ document:
   class_options: '11pt, letterpaper'
 
 profile:
-  name_left: 'Nicholas R. Chitwood,'
-  name_right: 'Ed.D'
-  position: 'Administrator, Assessment, Accountability, and Continuous Improvement\enskip\textperiodcentered\enskip Riverside County Office of Education'
+  # Demote Ed.D. from the bold wordmark to the muted subtitle, matching
+  # the letter exemplar. Wordmark reads "Nicholas R. Chitwood." (clean,
+  # accent period only); Ed.D. travels in the subtitle line with the role.
+  name_left: 'Nicholas R. Chitwood'
+  name_right: ''
+  position: 'Ed.D.\enskip\textcolor{accent}{\textperiodcentered}\enskip Administrator, AACI\enskip\textcolor{accent}{\textperiodcentered}\enskip Riverside County Office of Education'
   address: 'Riverside, CA'
   mobile: '559-303-7730'
   email: 'nicholaschitwood@gmail.com'

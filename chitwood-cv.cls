@@ -115,11 +115,11 @@
 % margins, the main column text starts at ~3.86in from page left. So
 % 3.75in fill width sits cleanly in the gap.
 %
-% Fill bottom dropped from 0.5in -> 0.3in above page bottom so the
-% fill reaches closer to the footer wordmark — eliminates the visible
-% paper gap between the bottom of the sidebar fill and the footer.
+% Fill bottom set to align with the footer's hairline rule top —
+% empirically ~0.6in above page bottom (footer baseline ~0.4in above
+% page bottom + ~0.125in of text height + 1.5mm gap + rule thickness).
 \newlength{\atelierFillBottom}
-\setlength{\atelierFillBottom}{0.3in}
+\setlength{\atelierFillBottom}{0.6in}
 \newlength{\atelierFillWidth}
 \setlength{\atelierFillWidth}{3.75in}
 
@@ -211,8 +211,14 @@
     \noindent\hfill{\fontsize{9}{11}\InterTightSemiBold\color{muted}%
       \MakeUppercase{\@cvversion}}\\[2mm]
   \fi
-  % Name, with accent period
-  \noindent\headerlastnamestyle{\@firstname\acvHeaderNameDelim\@lastname}%
+  % Name, with accent period. If lastname is empty (resume style where
+  % "Ed.D." is demoted to the muted subtitle line instead of being part
+  % of the bold wordmark), skip the delimiter + lastname so we don't get
+  % a trailing space before the accent period.
+  \noindent\headerlastnamestyle{%
+    \@firstname
+    \ifdefempty{\@lastname}{}{\acvHeaderNameDelim\@lastname}%
+  }%
   {\fontsize{26}{30}\InterTightSemiBold\color{accent}.}\\[1mm]
   % Role line
   \ifx\@position\@empty\else
@@ -415,8 +421,8 @@
   \vspace{0.5mm}%
 }
 
-% Publication items — hanging indent, no bullet. Same 10pt body size as
-% cvitems for font/size consistency across all body content.
+% Publication items — hanging indent, no bullet. Same 10pt body size
+% as cvitems for font/size consistency across all body content.
 \newcommand*{\pubitemstyle}{\fontsize{10}{13.5}\InterTightRegular\color{atelierText}}
 \renewenvironment{pubitems}{%
   \vspace{0.5mm}%
