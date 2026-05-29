@@ -66,22 +66,10 @@
 \newcommand{\zpage}[1]{\ifnum#1<10 0\fi\number#1}
 
 %-------------------------------------------------------------------------------
-% Footer — wordmark left (accent period), zero-padded page/total right,
-% soft hairline rule above.
+% Footer — suppressed for this letter (no wordmark, no page number).
+% The signature block at the end of the body carries identity.
 %-------------------------------------------------------------------------------
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[L]{%
-  {\color{rulesoft}\rule{\linewidth}{0.4pt}}\\[1.8mm]%
-  \makebox[\linewidth][l]{%
-    {\fontsize{10}{12}\InterTightSemiBold\color{atelierText}%
-      Nicholas R. Chitwood\textcolor{accent}{.}}\hfill
-    {\fontsize{9.5}{12}\InterTightSemiBold\color{muted}%
-      \zpage{\value{page}} \ /\ \zpage{\getpagerefnumber{LastPage}}}%
-  }%
-}
+\pagestyle{empty}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.9em}
@@ -118,9 +106,9 @@
 
 %-------- Recipient block --------
 \vspace{6mm}
-\noindent{\fontsize{10.5}{14.5}\InterTightSemiBold\color{atelierText}Dr. Edwin Gomez}\par
+\noindent{\fontsize{10.5}{14.5}\InterTightSemiBold\color{atelierText}Dr. Heather Williams}\par
 \noindent{\fontsize{10.5}{14.5}\InterTightRegular\color{atelierText}%
-  Superintendent of Schools\\
+  Associate Superintendent\\
   Riverside County Office of Education\\
   3939 Thirteenth Street\\
   Riverside, CA 92501}\par
@@ -133,7 +121,7 @@
 %-------- Salutation + body --------
 \vspace{6mm}
 \noindent{\fontsize{11}{16}\InterTightRegular\color{atelierText}%
-Dear Dr. Gomez,
+Dear Dr. Williams,
 
 I am applying for the position of Executive Director, Assessment, Accountability, and Continuous Improvement. My work in educational leadership has consistently integrated the needs of our most at-risk students and the complex program and fiscal systems that align resources to meet those needs. Since my first Federal Program Monitoring review as a TOSA -- Compliance Coordinator through my current work synthesizing, analyzing, and visualizing student data across the county, I have focused on addressing opportunity gaps for students through shared stewardship with district and site leaders. This through-line would continue as Executive Director.
 
