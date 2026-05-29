@@ -109,36 +109,47 @@
 %      left page edge and extends from below the masthead rule down to
 %      just above the footer rule. Paracol's native column background
 %      doesn't bleed past the column box, so eso-pic is the right tool.
-% Fill geometry. Width must END BEFORE the paracol main column's text
-% begins, otherwise the right side of the fill bleeds behind main col
-% text. With columnratio 0.42/0.58, columnsep 24pt, and 0.6in outer
-% margins, the main column text starts at ~3.86in from page left. So
-% 3.75in fill width sits cleanly in the gap.
-%
-% Fill bottom set to align with the footer's hairline rule top —
-% empirically ~0.6in above page bottom (footer baseline ~0.4in above
-% page bottom + ~0.125in of text height + 1.5mm gap + rule thickness).
-\newlength{\atelierFillBottom}
-\setlength{\atelierFillBottom}{0.6in}
+% Fill width: 3.75in sits cleanly in the gap between sidebar text
+% (ending ~3.53in from page left) and main col text (starting ~3.86in).
 \newlength{\atelierFillWidth}
 \setlength{\atelierFillWidth}{3.75in}
 
+% Fill bottom fallback for first compile pass (before .aux exists).
+\newlength{\atelierFillBottom}
+\setlength{\atelierFillBottom}{0.6in}
+
+% Deterministic fill: top edge captured from \zsavepos{atelier-masthead-rule}
+% inside \makecvheader, bottom edge captured from \zsavepos{atelier-footer-rule}
+% inside \makecvfooter. TikZ accepts dimensions directly (eso-pic's \put
+% wants numbers in \unitlength), so the dimexpr arithmetic flows straight
+% in without sp/pt conversion gymnastics. Two-pass compile required.
 \AddToShipoutPictureBG{%
   \ifnum\value{page}=1\relax
-    \AtPageLowerLeft{%
-      % Fill top y = position of masthead rule (captured via zsavepos).
-      % First compile pass — ref undefined, fall back to a placeholder so
-      % layout completes. Second pass reads .aux and aligns exactly.
-      \zref@ifrefundefined{atelier-masthead-rule}{%
+    \zref@ifrefundefined{atelier-masthead-rule}{%
+      % First pass — refs undefined, draw the fallback box.
+      \AtPageLowerLeft{%
         \put(0pt, \atelierFillBottom){%
           \color{sidebar}\rule{\atelierFillWidth}{8.5in}%
         }%
-      }{%
-        \put(0pt, \atelierFillBottom){%
-          \color{sidebar}\rule{\atelierFillWidth}{%
-            \dimexpr \zposy{atelier-masthead-rule}sp - \atelierFillBottom \relax%
+      }%
+    }{%
+      \zref@ifrefundefined{atelier-footer-rule}{%
+        % Masthead known, footer not yet — use masthead top + fallback bottom.
+        \AtPageLowerLeft{%
+          \put(0pt, \atelierFillBottom){%
+            \color{sidebar}\rule{\atelierFillWidth}{%
+              \dimexpr \zposy{atelier-masthead-rule}sp - \atelierFillBottom \relax%
+            }%
           }%
         }%
+      }{%
+        % Both known — fully measured fill, aligned to actual rule positions.
+        \begin{tikzpicture}[remember picture, overlay]
+          \fill[sidebar]
+            ([yshift=\dimexpr\zposy{atelier-footer-rule}sp\relax]current page.south west)
+            rectangle
+            ++(\atelierFillWidth, \dimexpr\zposy{atelier-masthead-rule}sp - \zposy{atelier-footer-rule}sp\relax);
+        \end{tikzpicture}%
       }%
     }%
   \fi
@@ -242,7 +253,9 @@
   \fancyfoot{}%
   \renewcommand{\footrulewidth}{0pt}%
   \fancyfoot[L]{%
-    {\color{rulesoft}\rule{\linewidth}{0.4pt}}\\[1.5mm]%
+    {\color{rulesoft}\rule{\linewidth}{0.4pt}}%
+    \zsavepos{atelier-footer-rule}%
+    \\[1.5mm]%
     \makebox[\linewidth][l]{%
       {\fontsize{9}{11}\InterTightSemiBold\color{atelierText}%
         Nicholas R. Chitwood\textcolor{accent}{.}}\hfill
