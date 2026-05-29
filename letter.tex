@@ -78,15 +78,16 @@
 \begin{document}
 %===============================================================================
 
-%-------- Masthead (tighter — 26pt name, immediate subtitle) --------
+%-------- Masthead + rules — wrapped in \parskip=0pt group so the
+% parskip package (none loaded here, but \par still picks up default)
+% doesn't push the rules ~7pt away from the content above.
+\begingroup\parskip=0pt
 \noindent{\fontsize{26}{30}\InterTightSemiBold\color{atelierText}%
   Nicholas R. Chitwood\textcolor{accent}{.}}\par
 \vspace{0.5mm}
 \noindent{\fontsize{10.5}{13}\InterTightRegular\color{muted}%
   Ed.D.\enskip\textcolor{accent}{\textperiodcentered}\enskip Education Leadership \& Data Infrastructure}\par
-
-%-------- Strong rule + contact rail + soft hairline --------
-\vspace{2.5mm}
+\vspace{1.5mm}
 \noindent{\color{rule}\rule{\linewidth}{0.8pt}}\par
 \vspace{2mm}
 \noindent{\fontsize{9.5}{12}\InterTightRegular\color{muted}%
@@ -97,8 +98,9 @@
   \href{mailto:nicholaschitwood@gmail.com}{nicholaschitwood@gmail.com}
   \enskip\textcolor{accent}{\textperiodcentered}\enskip
   \href{https://www.nickchitwood.com}{nickchitwood.com}}\par
-\vspace{2mm}
+\vspace{1mm}
 \noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
+\endgroup
 
 %-------- Date --------
 \vspace{5mm}
