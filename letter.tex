@@ -1,26 +1,25 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 %%
-%% Cover letter — Atelier design system (per nrc_design_system/DESIGN.md §8.3).
-%% Shares the design tokens with chitwood-cv.cls (Inter Tight, forest-green
-%% accent, paper/sidebar palette, marker-square accent) but uses a standalone
-%% preamble — the letter format has nothing in common with the CV's paracol
-%% sidebar/main layout, so loading chitwood-cv.cls would only be friction.
+%% Cover letter — Atelier design system per the Claude Design exemplar.
+%% Standalone preamble (chitwood-cv.cls is paracol-heavy and shares no
+%% layout with a letter, only design tokens).
 %%
 \documentclass[11pt, letterpaper]{article}
 
-\usepackage[letterpaper, margin=0.75in, footskip=0.4in]{geometry}
+\usepackage[letterpaper, margin=0.85in, footskip=0.45in]{geometry}
 \usepackage{fontspec}
 \usepackage{xcolor}
-\usepackage{eso-pic}
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{microtype}
 \usepackage{ragged2e}
+\usepackage{lastpage}
+\usepackage{refcount}
 \usepackage[hidelinks]{hyperref}
 
 %-------------------------------------------------------------------------------
-% Atelier color tokens — same values as chitwood-cv.cls.
+% Atelier color tokens (DESIGN.md §3).
 %-------------------------------------------------------------------------------
 \definecolor{paper}{HTML}{FAF6EC}
 \definecolor{atelierText}{HTML}{11140F}
@@ -32,7 +31,7 @@
 \pagecolor{paper}
 
 %-------------------------------------------------------------------------------
-% Inter Tight via fontspec — static TTFs, tabular figures on for date alignment.
+% Inter Tight via fontspec — static TTFs, tabular figures for dates/numbers.
 %-------------------------------------------------------------------------------
 \setmainfont{Inter Tight}[
   Path = fonts/,
@@ -47,89 +46,94 @@
 \newfontfamily\InterTightSemiBold[Path=fonts/, Extension=.ttf,
   UprightFont = InterTight-SemiBold, ItalicFont = InterTight-SemiBoldItalic,
   Ligatures = TeX, Numbers = {Monospaced}]{InterTight}
+\newfontfamily\InterTightBold[Path=fonts/, Extension=.ttf,
+  UprightFont = InterTight-Bold, ItalicFont = InterTight-BoldItalic,
+  Ligatures = TeX, Numbers = {Monospaced}]{InterTight}
 \newfontfamily\InterTightRegular[Path=fonts/, Extension=.ttf,
   UprightFont = InterTight-Regular, ItalicFont = InterTight-Italic,
   Ligatures = TeX, Numbers = {Monospaced}]{InterTight}
 
 %-------------------------------------------------------------------------------
-% Top accent bar — 6pt forest-green flush to top of every page (per §8.3).
+% Marker square (DESIGN.md §7.2).
 %-------------------------------------------------------------------------------
-\AddToShipoutPictureFG{%
-  \AtPageUpperLeft{%
-    \put(0,-6){\color{accent}\rule{\paperwidth}{6bp}}%
-  }%
+\newcommand{\atmarker}{%
+  \tikz[baseline=-0.18ex]\fill[accent] (0,0) rectangle (7pt,7pt);%
 }
 
 %-------------------------------------------------------------------------------
-% Footer — wordmark left, page number right, soft hairline on top.
+% Zero-padded page number helper (\zpage -> "01", "02", etc.).
+%-------------------------------------------------------------------------------
+\newcommand{\zpage}[1]{\ifnum#1<10 0\fi\number#1}
+
+%-------------------------------------------------------------------------------
+% Footer — wordmark left (accent period), zero-padded page/total right,
+% soft hairline rule above.
 %-------------------------------------------------------------------------------
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[L]{%
-  {\color{rulesoft}\rule{\linewidth}{0.4pt}}\\[1.5mm]%
+  {\color{rulesoft}\rule{\linewidth}{0.4pt}}\\[1.8mm]%
   \makebox[\linewidth][l]{%
-    {\fontsize{9}{11}\InterTightSemiBold\color{atelierText}%
+    {\fontsize{10}{12}\InterTightSemiBold\color{atelierText}%
       Nicholas R. Chitwood\textcolor{accent}{.}}\hfill
-    {\fontsize{9}{11}\InterTightSemiBold\color{muted}\thepage}%
+    {\fontsize{9.5}{12}\InterTightSemiBold\color{muted}%
+      \zpage{\value{page}} \ /\ \zpage{\getpagerefnumber{LastPage}}}%
   }%
 }
 
-%-------------------------------------------------------------------------------
-% Marker square (Atelier signature — DESIGN.md §7.2).
-%-------------------------------------------------------------------------------
-\newcommand{\atmarker}{%
-  \tikz[baseline=-0.18ex]\fill[accent] (0,0) rectangle (7pt,7pt);%
-}
-
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
+\setlength{\parskip}{0.9em}
 
 %===============================================================================
 \begin{document}
 %===============================================================================
 
 %-------- Masthead --------
-\noindent{\fontsize{28}{32}\InterTightSemiBold\color{atelierText}%
+\noindent{\fontsize{32}{36}\InterTightSemiBold\color{atelierText}%
   Nicholas R. Chitwood\textcolor{accent}{.}}\par
-\vspace{1mm}
-\noindent{\fontsize{11}{14}\InterTightRegular\color{muted}Ed.D.}\par
+\vspace{1.5mm}
+\noindent{\fontsize{11.5}{14}\InterTightRegular\color{muted}%
+  Ed.D.\enskip\textcolor{accent}{\textperiodcentered}\enskip Education Leadership \& Data Infrastructure}\par
 
-%-------- Contact rail (strong rule top, soft hairline bottom) --------
-\vspace{6mm}
+%-------- Strong rule + contact rail + soft hairline --------
+\vspace{4mm}
 \noindent{\color{rule}\rule{\linewidth}{0.8pt}}\par
-\vspace{2.5mm}
+\vspace{3mm}
 \noindent{\fontsize{10}{13}\InterTightRegular\color{muted}%
-  Riverside, CA
-  \enskip{\color{accent}\textperiodcentered}\enskip
-  559-303-7730
-  \enskip{\color{accent}\textperiodcentered}\enskip
+  8348 Carriage Ct., Riverside, CA 92508
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
+  (559) 303-7730
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
   \href{mailto:nicholaschitwood@gmail.com}{nicholaschitwood@gmail.com}
-  \enskip{\color{accent}\textperiodcentered}\enskip
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
   \href{https://www.nickchitwood.com}{nickchitwood.com}}\par
-\vspace{2.5mm}
+\vspace{3mm}
 \noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
 
 %-------- Date --------
-\vspace{8mm}
+\vspace{10mm}
 \noindent{\fontsize{10.5}{14}\InterTightRegular\color{muted}May 28, 2026}\par
 
-%-------- Recipient --------
+%-------- Recipient block --------
 \vspace{6mm}
-\noindent{\fontsize{10.5}{14}\InterTightRegular\color{atelierText}%
-  Dr. Williams\\
-  Riverside County Office of Education}\par
+\noindent{\fontsize{10.5}{14.5}\InterTightSemiBold\color{atelierText}Dr. Edwin Gomez}\par
+\noindent{\fontsize{10.5}{14.5}\InterTightRegular\color{atelierText}%
+  Superintendent of Schools\\
+  Riverside County Office of Education\\
+  3939 Thirteenth Street\\
+  Riverside, CA 92501}\par
 
-%-------- Subject (marker square + bold) --------
-\vspace{8mm}
+%-------- Subject (marker square + bold, no "Re:" prefix) --------
+\vspace{9mm}
 \noindent\atmarker\hspace{6pt}{\fontsize{11.5}{15}\InterTightSemiBold\color{atelierText}%
-  Re: Executive Director, Assessment, Accountability, and Continuous Improvement}\par
+  Executive Director, Assessment, Accountability, and Continuous Improvement}\par
 
 %-------- Salutation + body --------
 \vspace{6mm}
 \noindent{\fontsize{11}{16}\InterTightRegular\color{atelierText}%
-Dear Dr. Williams,
+Dear Dr. Gomez,
 
 I am applying for the position of Executive Director, Assessment, Accountability, and Continuous Improvement. My work in educational leadership has consistently integrated the needs of our most at-risk students and the complex program and fiscal systems that align resources to meet those needs. Since my first Federal Program Monitoring review as a TOSA -- Compliance Coordinator through my current work synthesizing, analyzing, and visualizing student data across the county, I have focused on addressing opportunity gaps for students through shared stewardship with district and site leaders. This through-line would continue as Executive Director.
 
@@ -142,8 +146,9 @@ As a whole, these experiences prepare me with the breadth of background that our
 \vspace{2mm}
 Thank you,
 
-\vspace{8mm}
-{\InterTightSemiBold Nicholas R. Chitwood, Ed.D.}
+\vspace{10mm}
+{\InterTightSemiBold Nicholas R. Chitwood, Ed.D.}\\[0.5mm]
+{\fontsize{10}{13}\InterTightRegular\color{muted}Administrator, AACI \textcolor{accent}{\textperiodcentered} Riverside County Office of Education}
 }\par
 
 \end{document}
