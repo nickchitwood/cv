@@ -113,10 +113,13 @@
 % begins, otherwise the right side of the fill bleeds behind main col
 % text. With columnratio 0.42/0.58, columnsep 24pt, and 0.6in outer
 % margins, the main column text starts at ~3.86in from page left. So
-% 3.75in fill width sits cleanly in the gap (~0.22in padding past
-% sidebar text right edge, ~0.1in before main col text starts).
+% 3.75in fill width sits cleanly in the gap.
+%
+% Fill bottom dropped from 0.5in -> 0.3in above page bottom so the
+% fill reaches closer to the footer wordmark — eliminates the visible
+% paper gap between the bottom of the sidebar fill and the footer.
 \newlength{\atelierFillBottom}
-\setlength{\atelierFillBottom}{0.5in}
+\setlength{\atelierFillBottom}{0.3in}
 \newlength{\atelierFillWidth}
 \setlength{\atelierFillWidth}{3.75in}
 
