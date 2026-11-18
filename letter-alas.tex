@@ -1,0 +1,150 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%%
+%% Recommendation letter — Dr. Jessica Mendoza, ALAS Superintendent
+%% Leadership Academy. Reuses the Atelier letterhead from letter.tex.
+%%
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[letterpaper, margin=0.75in, footskip=0.45in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{lastpage}
+\usepackage{refcount}
+\usepackage[hidelinks]{hyperref}
+
+%-------------------------------------------------------------------------------
+% Atelier color tokens (DESIGN.md §3).
+%-------------------------------------------------------------------------------
+\definecolor{paper}{HTML}{FAF6EC}
+\definecolor{atelierText}{HTML}{11140F}
+\definecolor{muted}{HTML}{5F6358}
+\definecolor{accent}{HTML}{1F4D2A}
+\definecolor{rule}{HTML}{11140F}
+\definecolor{rulesoft}{HTML}{C2BEA9}
+
+\pagecolor{paper}
+
+%-------------------------------------------------------------------------------
+% Inter Tight via fontspec — static TTFs, tabular figures for dates/numbers.
+%-------------------------------------------------------------------------------
+\setmainfont{Inter Tight}[
+  Path = fonts/,
+  Extension = .ttf,
+  UprightFont = InterTight-Regular,
+  ItalicFont = InterTight-Italic,
+  BoldFont = InterTight-SemiBold,
+  BoldItalicFont = InterTight-SemiBoldItalic,
+  Ligatures = TeX,
+  Numbers = {Monospaced},
+]
+\newfontfamily\InterTightSemiBold[Path=fonts/, Extension=.ttf,
+  UprightFont = InterTight-SemiBold, ItalicFont = InterTight-SemiBoldItalic,
+  Ligatures = TeX, Numbers = {Monospaced}]{InterTight}
+\newfontfamily\InterTightBold[Path=fonts/, Extension=.ttf,
+  UprightFont = InterTight-Bold, ItalicFont = InterTight-BoldItalic,
+  Ligatures = TeX, Numbers = {Monospaced}]{InterTight}
+\newfontfamily\InterTightRegular[Path=fonts/, Extension=.ttf,
+  UprightFont = InterTight-Regular, ItalicFont = InterTight-Italic,
+  Ligatures = TeX, Numbers = {Monospaced}]{InterTight}
+
+%-------------------------------------------------------------------------------
+% Marker square (DESIGN.md §7.2).
+%-------------------------------------------------------------------------------
+\newcommand{\atmarker}{%
+  \tikz[baseline=-0.18ex]\fill[accent] (0,0) rectangle (7pt,7pt);%
+}
+
+\pagestyle{empty}
+
+%-------------------------------------------------------------------------------
+% Contact-line toggle. \workcontacttrue swaps the personal contact line for
+% RCOE work contact; \workcontactfalse (default) keeps personal contact.
+% NOTE: this is personal letterhead either way — see signature for affiliation.
+%-------------------------------------------------------------------------------
+\newif\ifworkcontact
+\workcontactfalse  % <- set to \workcontacttrue for RCOE contact info
+
+% RCOE work contact details (edit phone/email to your exact line):
+\newcommand{\workaddr}{3939 Thirteenth Street, Riverside, CA 92501}
+\newcommand{\workphone}{(951) 826-6530}
+\newcommand{\workemail}{nchitwood@rcoe.us}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+%===============================================================================
+\begin{document}
+%===============================================================================
+
+%-------- Masthead + rules --------
+\begingroup\parskip=0pt
+\noindent{\fontsize{26}{30}\InterTightSemiBold\color{atelierText}%
+  Nicholas R. Chitwood\textcolor{accent}{.}}\par
+\vspace{0.5mm}
+\noindent{\fontsize{10.5}{13}\InterTightRegular\color{muted}Ed.D.}\par
+\vspace{1.5mm}
+\noindent{\color{rule}\rule{\linewidth}{0.8pt}}\par
+\vspace{2mm}
+\noindent{\fontsize{9.5}{12}\InterTightRegular\color{muted}%
+\ifworkcontact
+  \workaddr
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
+  \workphone
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
+  \href{mailto:\workemail}{\workemail}
+\else
+  8348 Carriage Ct., Riverside, CA 92508
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
+  (559) 303-7730
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
+  \href{mailto:nicholaschitwood@gmail.com}{nicholaschitwood@gmail.com}
+  \enskip\textcolor{accent}{\textperiodcentered}\enskip
+  \href{https://www.nickchitwood.com}{nickchitwood.com}%
+\fi
+}\par
+\vspace{1mm}
+\noindent{\color{rulesoft}\rule{\linewidth}{0.4pt}}\par
+\endgroup
+
+%-------- Date --------
+\vspace{4mm}
+\noindent{\fontsize{10.5}{14}\InterTightRegular\color{muted}June 4, 2026}\par
+
+%-------- Recipient block --------
+\vspace{3mm}
+\noindent{\fontsize{10.5}{14}\InterTightSemiBold\color{atelierText}ALAS SLA Selection Committee}\par
+\noindent{\fontsize{10.5}{14}\InterTightRegular\color{atelierText}%
+  Association of Latino Administrators and Superintendents}\par
+
+%-------- Subject (marker square + bold) --------
+\vspace{4mm}
+\noindent\atmarker\hspace{6pt}{\fontsize{11}{14}\InterTightSemiBold\color{atelierText}%
+  Recommendation --- Dr. Jessica Mendoza, Superintendent Leadership Academy}\par
+
+%-------- Salutation + body --------
+\vspace{3mm}
+\noindent{\fontsize{10.5}{14.3}\InterTightRegular\color{atelierText}%
+Dear ALAS SLA Selection Committee:
+
+I write to recommend Dr. Jessica Mendoza for selection to participate in the Superintendent Leadership Academy for the Association of Latino Administrators and Superintendents. I currently serve as Administrator, Assessment, Accountability and Continuous Improvement with the Riverside County Office of Education. In that role, I have had the pleasure of working with Dr. Mendoza, first as a member of the Riverside County Assessment Network (RCAN) when she was the Coordinator of Testing and Assessment in the Coachella Unified School District in the 2018--2019 school year. More recently, I've had the privilege of working in partnership with her in her current role as Administrator, Assessment and Data Literacy. I am excited for Dr. Mendoza to enhance the leadership skills that have brought her to this point in her career, and I can recommend her for your program without reservation.
+
+RCOE sits at the center of a demanding environment of 23 school districts, with a wide range of staff capacity and student needs. Dr. Mendoza has seen those needs face-to-face as a district and site leader in the Coachella Valley region, with its accompanying challenges: poverty, language barriers, and highly mobile student populations. As facilitator of RCAN, she has reimagined the format of the network and streamlined the sharing of what is normally a firehose of technical implementation guidance on state assessments and accountability rules. By decreasing the volume of content, she created more time for building shared understanding and collaborating on problems of practice, especially those affecting the most marginalized students. This demonstrates her sharp understanding of what it takes to lead district administrators: they are high capacity but severely time constrained.
+
+She has also demonstrated the same keen judgment in working with peers across the organization on our upcoming data literacy series. Dr. Mendoza has focused on peer leadership to keep the work moving forward. This is especially important as she honors the deep thinking and hard work of her colleagues while navigating nuanced organizational dynamics that make the design of the series a complex, layered task. Most of all, consistent with her leadership of RCAN, she has remained focused on keeping practical tools and leader engagement at the center of the design of the series.
+
+I am confident that Dr. Mendoza's experience and leadership qualities have prepared her to leverage the ALAS Academy to take on greater scope and impact toward the kind of executive leadership the academy is built to develop.
+
+\vspace{1mm}
+Sincerely,
+
+\vspace{8mm}
+{\InterTightSemiBold Nick Chitwood, Ed.D.}\\[0.5mm]
+{\fontsize{10}{13}\InterTightRegular\color{muted}Administrator, Assessment, Accountability and Continuous Improvement \textcolor{accent}{\textperiodcentered} Riverside County Office of Education}
+}\par
+
+\end{document}
